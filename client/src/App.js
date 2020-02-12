@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
-import "./App.scss";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload. and more 
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -19,7 +19,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <header className="App-header">My Property Manager</header>
     </div>
   );
 }
