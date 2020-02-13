@@ -41,7 +41,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.",
+  "description":"Created for Property Managers, by Lambda School Students",
   "main": "index.js",
   "repository": {
     "type": "git",
