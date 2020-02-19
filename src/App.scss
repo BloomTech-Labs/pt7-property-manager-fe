@@ -1,9 +1,11 @@
 #root {
   height: 100%;
 }
+
 .App {
   text-align: center;
   height: 100%;
+
   .App-header {
     background-color: transparent;
     display: flex;
@@ -13,23 +15,33 @@
     font-family: 'Lato', sans-serif;
     font-weight: 200;
     color: #308C47;
-    // border-radius: 0px 0px 10px 10px;
-    // box-shadow: #000 0px 1px 5px;
   }
-  .logo{
+
+  .logo {
     width: 6em;
     height: auto;
     background-color: #308C47;
     border-radius: 0px 0px 10px 10px;
-    box-shadow: #000 0px 1px 5px;
+    box-shadow: #308C47 0px 1px 5px;
   }
 }
-body, html  {
+
+body,
+html {
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
 }
+
 html {
   font-size: 62.5%;
+}
+
+@media (max-width: 1260px) {
+  .App {
+    .App-header {
+      // background: rgba($color: #000000, $alpha: 0.25);
+    }
+  }
 }
