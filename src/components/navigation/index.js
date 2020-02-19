@@ -20,7 +20,7 @@ export default function Navigation() {
   };
   return (
     <div className="navbar">
-      <a href="/">
+      <a href="/dashboard">
         <nav-item>Dashboard</nav-item>
       </a>
       <a href="/about">

@@ -12,6 +12,7 @@ import PrivateRoute from "./components/PrivateRoute.js";
 import UserPage from "./components/user";
 import { UserProvider } from "./contexts/userContext";
 import Footer from "./components/footer";
+import Notifications from "./components/user/notifications";
 function App() {
   const [user, setUser] = useState({
     username: localStorage.getItem("username"),
@@ -32,7 +33,8 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Logout" component={Logout} />
-          <PrivateRoute exact path="/User" component={UserPage} />
+          <PrivateRoute exact path="/Dashboard" component={UserPage} />
+          <PrivateRoute path="/Dashboard/:id/Notifications" component={Notifications} />
           {/* <Route exact path="/User" component={UserPage} /> */}
         </Switch>
         <Footer />
