@@ -1,9 +1,30 @@
 import React from "react";
+import './homepage.scss'
 
 export default function Home() {
   return (
     <div>
-      <h2>Home Page</h2>
+      <section className="mainContent contentSection">
+        <div className="heading">
+          <h1 className="header">Find your new home with <br></br>
+          Property Manager</h1>
+          <button className="getStarted">Get Started</button>
+        </div>
+      </section>
+      <section className="propertyManager contentSection">
+        <div className="heading">
+          <h2 className="header">Property Manager aims to reduce communication friction between landlord and tenant.</h2>
+        </div>
+      </section>      
+      <section className="ourGoals contentSection">
+        <div className="heading">
+          <ul className='goalUl'><h3 className="headers">We strive to provide:</h3>
+            <li className="goal">Clear visibility and access to important property documents</li>
+            <li className="goal">Up-to-date progress on renter requests</li>
+            <li className="goal">And be seamless one-stop shop for both renters and owners</li>
+          </ul>
+        </div>
+      </section>      
     </div>
   );
 }
