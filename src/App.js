@@ -26,7 +26,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <div className="logoHolder">
-            <img className="logo" src={logo} alt='logo' />
+            <a href="/"><img className="logo" src={logo} alt='logo' /></a>
           </div>
           <Navigation />
         </header>
