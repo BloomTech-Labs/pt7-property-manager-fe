@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import {
   // Button, 
   Navbar,
@@ -10,11 +10,22 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText} from "reactstrap";
-
 export default function UserNav() {
+   const [scrolled, setScrolled] = useState({});
+   useEffect(() => {
+     const handleScroll = _ => {
+       if (window.pageYOffset > 1) {
+         setScrolled("top");
+       } 
+     };
+     window.addEventListener("scroll", handleScroll);
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
+   console.log(scrolled);
   return (
-     <div className="user-nav">
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" sticky={`${scrolled}`} light expand="lg">
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink href="#notifications">
@@ -26,11 +37,11 @@ export default function UserNav() {
                 Applications
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink href="#workOrders">
                 Work Orders
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink href="#properties">Properties</NavLink>
             </NavItem>
@@ -56,8 +67,6 @@ export default function UserNav() {
           <NavbarText>
             <NavLink href="/dashboard/settings">Settings</NavLink>
           </NavbarText>
-        </Navbar>
-      </div>
-      
+        </Navbar>      
   )
 }

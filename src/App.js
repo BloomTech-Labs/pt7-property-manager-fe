@@ -8,6 +8,7 @@ import Signup from "./components/signup/";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Logout from "./components/logout/";
+import Properties from "./components/properties";
 import PrivateRoute from "./components/PrivateRoute.js";
 import UserPage from "./components/user";
 import { UserProvider } from "./contexts/userContext";
@@ -32,6 +33,7 @@ function App() {
         </header>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/Properties" component={Properties} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Login" component={Login} />

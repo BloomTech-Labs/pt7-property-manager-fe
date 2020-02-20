@@ -23,6 +23,9 @@ export default function Navigation() {
       <a href="/dashboard">
         <nav-item>Dashboard</nav-item>
       </a>
+      <a href="/properties">
+        <nav-item>Properties</nav-item>
+      </a>
       <a href="/about">
         <nav-item>About</nav-item>
       </a>

@@ -16,10 +16,23 @@
     font-weight: 200;
     color: #308C47;
   }
+  .main-content{
+    min-height:100vh;
+    h2{
+      font-size:5rem;
+    }
+  }
   .dashboard{
-      margin-bottom:40vh;
+      margin-bottom:20vh;
+    .nav-link{
+      font-size:1.75rem;
+    }
     .bodyDiv {
-        min-height:50vh;
+      padding-top:50px;
+        min-height:75vh;
+        h3{
+          font-size:4rem;
+        }
     }
   }
 
