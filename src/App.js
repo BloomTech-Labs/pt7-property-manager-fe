@@ -13,6 +13,8 @@ import UserPage from "./components/user";
 import { UserProvider } from "./contexts/userContext";
 import Footer from "./components/footer";
 import Notifications from "./components/user/notifications";
+import logo from './icons/pm.png'
+
 function App() {
   const [user, setUser] = useState({
     username: localStorage.getItem("username"),
@@ -23,7 +25,9 @@ function App() {
     <UserProvider value={{ user, setUser }}>
       <div className="App">
         <header className="App-header">
-          <h1>My Property Manager</h1>
+          <div className="logoHolder">
+            <img className="logo" src={logo} alt='logo' />
+          </div>
           <Navigation />
         </header>
         <Switch>

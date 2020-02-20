@@ -1,13 +1,19 @@
 header .navbar {
-  width: 90%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: flex-end;
+  justify-content: flex-end;
   a {
     text-decoration: none;
-    color: white;
+    color: #308C47;
+    margin: 0px 0.5em;
+    font-weight: 300;
     &:hover {
       color: lightgray;
     }
   }
+}
+
+@media (max-width: 1260px) {
+
 }
