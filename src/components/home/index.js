@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './homepage.scss'
 
 export default function Home() {
@@ -10,23 +10,26 @@ export default function Home() {
             Find your new home with <br></br>
             Property Manager
           </h1>
-          <a href="/signup">
-            <button className="getStarted">Get Started</button>
+          <a href="#propertyManager">
+            <button className="getStarted">Learn More</button>
           </a>
         </div>
       </section>
-      <section className="propertyManager contentSection">
+      <section id="propertyManager" className="propertyManager contentSection">
         <div className="heading">
           <h2 className="header">
             Property Manager aims to reduce communication friction between
             landlord and tenant.
           </h2>
+          <a href="/signup">
+            <button className="getStarted">Get Started</button>
+          </a>
         </div>
       </section>
       <section className="ourGoals contentSection">
         <div className="heading">
-          <ul className="goalUl">
-            <h3 className="headers">We strive to provide:</h3>
+          <ul className="goalUl header">
+            <h3>We strive to provide:</h3>
             <li className="goal">
               Clear visibility and access to important property documents
             </li>
@@ -35,6 +38,15 @@ export default function Home() {
               And be seamless one-stop shop for both renters and owners
             </li>
           </ul>
+        </div>
+      </section>
+      <section className="messaging contentSection">
+        <div className="heading">
+          <h2 className="header">Messaging made easier</h2>
+          <h3>
+            With Property Manager, message your landlord, submit work orders,
+            and set alerts without switching between apps.
+          </h3>
         </div>
       </section>
     </div>

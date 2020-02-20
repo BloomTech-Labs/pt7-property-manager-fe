@@ -1,9 +1,19 @@
 import React from "react";
+import '../home/homepage.scss'
 
 export default function Footer() {
   return (
-    <div>
-      <navbar>Footer goes here.</navbar>
-    </div>
+    <footer className='footer'>
+      <form className='newsletter'>
+        <h2>Stay up to date with our newsletter</h2>
+        <input className='newsletterEmail' name='newsletterEmail' type='email' placeholder='Enter your email'></input>
+        <button className='submitBtn'>Submit</button>
+      </form>
+      <ul className='links'>
+        <li className='link'><a href='google.com'>Contact us</a></li>
+        <li className='link'><a href='google.com'>FAQs</a></li>
+        <li className='link'><a href='google.com'>Meet the team</a></li>
+      </ul>
+    </footer>
   );
 }
