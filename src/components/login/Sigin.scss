@@ -1,0 +1,49 @@
+$green: #308C47;
+
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+input {
+    border: 2px solid #308C47;
+    color: #308C47;
+    background: none;
+    width: 340px;
+    font-weight: 400;
+    font-size: 3em;
+    padding: .5em 0em;
+    border-radius: 10px;
+    transition: 0.25s;
+    outline: none;
+    margin:20px auto;
+}
+
+input::placeholder{
+color:$green;
+}
+
+
+        .submit {
+            border: 2px solid $green;
+            color: $green;
+            background: none;
+            width: 340px;
+            font-weight: 400;
+            font-size: 3em;
+            padding: .5em 0em;
+            border-radius: 10px;
+            transition: 0.25s;
+            margin: 40px auto;
+            outline: none;
+            &:hover {
+                background: $green;
+                color: white;
+            }
+
+           &:active {
+                transform: translateY(5px);
+            }
+        } 
