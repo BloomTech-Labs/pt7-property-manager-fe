@@ -25,7 +25,7 @@ export default function UserNav() {
    }, []);
    console.log(scrolled);
   return (
-        <Navbar color="light" sticky={`${scrolled}`} light expand="lg">
+        <Navbar color="light" sticky={`${scrolled}`} light expand="sm">
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink href="#notifications">
