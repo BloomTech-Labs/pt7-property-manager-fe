@@ -1,10 +1,6 @@
 $green: #308C47;
 $bp-tablet: 1260px;
 
-// .w-50 {
-//     width: 50%;
-// }
-
 .mainContent {
     width: 100%;
     height: 70em;
@@ -49,6 +45,11 @@ $bp-tablet: 1260px;
             &:active {
                 transform: translateY(5px);
             }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
     }
 
@@ -88,7 +89,7 @@ h2 {
     background-position: right;
 
     .goalUl {
-        color: #308C47;
+        color: $green;
         font-size: 1.8em;
         width: 80%;
         text-align: start;
@@ -104,17 +105,110 @@ h2 {
     }
 }
 
+.messaging {
+    background: url('../../icons/undraw_message_sent_1030.svg');
+    height: 70em;
+    width: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        padding-right: 1.5em;
+    }
+
+    h3 {
+        color: $green;
+        font-size: 2em;
+        font-weight: 300;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    background: $green;
+    box-shadow: $green 0px 5px 20px 0px;
+    
+    .newsletter {
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        align-items: center;
+        margin: 0 auto;
+        h2 {
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .newsletterEmail {
+            font-size: 2.5em;
+            padding: 0.5em 1em;
+            outline: white;
+            border-radius: 5px;
+            border: none;
+            caret-color: $green;
+            margin-top: 0.5em;
+        }
+
+        .submitBtn {
+            font-size: 2.5em;
+            padding: 0.5em 2em;
+            border-radius: 5px;
+            border: 2px solid white;
+            background: none;
+            color: white;
+            margin-top: 0.5em;
+        }
+    }
+
+    .links {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 4em;
+
+        .link {
+            color: white;
+            font-size: 2.5em;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 @media (max-width: $bp-tablet) {
     .heading {
         width: 100%;
+        background: rgba($color: #fff, $alpha: 0.8);
+    }
+
+    .contentSection {
+        background-size: contain;
+
+        .header {
+            padding: 1.5em;
+        }
     }
 
     .contentSection:nth-child(1) {
         background: none;
+
+        .header {
+            background: none;
+        }
     }
+
     .contentSection:not(:nth-child(1)) {
         background-position: center;
     }
+
     .ourGoals {
         .goalUl {
             width: 100%;
@@ -123,8 +217,32 @@ h2 {
 
             li {
                 font-size: 1.6em;
+
+                &::before {
+                    content: '- ';
+                }
             }
-        }        
+        }
     }
 
+    .messaging {
+        .heading {
+            padding: 1em;
+            h3, .header {
+                margin: 0;
+            }
+            
+            h3 {
+                font-size: 2.3em;
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 2em;
+
+        h2 {
+            font-size: 2.5em;
+        }
+    }
 }

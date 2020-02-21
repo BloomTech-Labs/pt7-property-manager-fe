@@ -1,30 +1,36 @@
-import React from "react";
+import React from 'react';
 import './homepage.scss'
 
 export default function Home() {
   return (
     <div>
-      <section className="mainContent contentSection">
-        <div className="heading">
-          <h1 className="header">Find your new home with <br></br>
+      <section className='mainContent contentSection'>
+        <div className='heading'>
+          <h1 className='header'>Find your new home with <br></br>
           Property Manager</h1>
-          <button className="getStarted">Get Started</button>
+          <button className='getStarted'><a href='#propertyManager'>Get Started</a></button>
         </div>
       </section>
-      <section className="propertyManager contentSection">
-        <div className="heading">
-          <h2 className="header">Property Manager aims to reduce communication friction between landlord and tenant.</h2>
+      <section id='propertyManager' className='propertyManager contentSection'>
+        <div className='heading'>
+          <h2 className='header'>Property Manager aims to reduce communication friction between landlord and tenant.</h2>
         </div>
       </section>      
-      <section className="ourGoals contentSection">
-        <div className="heading">
-          <ul className='goalUl'><h3 className="headers">We strive to provide:</h3>
-            <li className="goal">Clear visibility and access to important property documents</li>
-            <li className="goal">Up-to-date progress on renter requests</li>
-            <li className="goal">And be seamless one-stop shop for both renters and owners</li>
+      <section className='ourGoals contentSection'>
+        <div className='heading'>
+          <ul className='goalUl header'><h3>We strive to provide:</h3>
+            <li className='goal'>Clear visibility and access to important property documents</li>
+            <li className='goal'>Up-to-date progress on renter requests</li>
+            <li className='goal'>And be seamless one-stop shop for both renters and owners</li>
           </ul>
         </div>
-      </section>      
+      </section>
+      <section className='messaging contentSection'>
+        <div className='heading'>
+          <h2 className='header'>Messaging made easier</h2>
+          <h3>With Property Manager, message your landlord, submit work orders, and set alerts without switching between apps.</h3>
+        </div>
+      </section>    
     </div>
   );
 }
