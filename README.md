@@ -35,6 +35,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/79bdb53497ece42ae50b/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-fe/maintainability)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/79bdb53497ece42ae50b/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-fe/test_coverage)
+
 1️⃣ [Trello Board](🚫add link to trello board here)
 
 1️⃣ [Product Canvas](🚫add link to product canvas here)
