@@ -10,9 +10,9 @@ export default function Footer() {
         <button className='submitBtn'>Submit</button>
       </form>
       <ul className='links'>
-        <li className='link'><a href='google.com'>Contact us</a></li>
-        <li className='link'><a href='google.com'>FAQs</a></li>
-        <li className='link'><a href='google.com'>Meet the team</a></li>
+        <li className='link'><a href='/contact'>Contact us</a></li>
+        <li className='link'><a href='/faq'>FAQs</a></li>
+        <li className='link'><a href='/meet'>Meet the team</a></li>
       </ul>
     </footer>
   );
