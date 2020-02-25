@@ -31,6 +31,12 @@ $main: #308C47;
                 box-shadow: 0 6px 6px -6px black;
             }
         }
+        .message {
+            border: 2px $main solid;
+            padding: 10px;
+            font-size: 2em;
+            outline: none;
+        }
         .buttonHolder {
             width: 100%;
             display: flex;
