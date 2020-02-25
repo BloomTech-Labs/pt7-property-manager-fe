@@ -1,13 +1,6 @@
 import React, {useState} from "react";
-import {Switch, Route} from "react-router-dom";
 // import PrivateRoute from "../PrivateRoute.js";
-import Notifications from "./notifications";
-import AddProperty from "./add-property";
-import AddRenter from "./add-renter";
-import Applications from "./applications";
-import Properties from "./properties";
-import Settings from "./settings";
-import WorkOrders from "./work-orders";
+
 import UserNav from "./user-nav";
 export default function UserPage() {
 

@@ -5,10 +5,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText} from "reactstrap";
 export default function UserNav() {
    const [scrolled, setScrolled] = useState({});
@@ -45,27 +41,9 @@ export default function UserNav() {
             <NavItem>
               <NavLink href="#properties">Properties</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                More
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <NavLink href="./add-property">
-                    Add Property
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  <NavLink href="./add-renter">
-                    Add Renter
-                  </NavLink>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
           </Nav>
           <NavbarText>
-            <NavLink href="/dashboard/settings">Settings</NavLink>
+            <NavLink href="/Renter/settings">Settings</NavLink>
           </NavbarText>
         </Navbar>      
   )
