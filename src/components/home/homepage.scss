@@ -130,8 +130,8 @@ h2 {
     width: 100%;
     height: auto;
     background: $green;
-    box-shadow: $green 0px 5px 20px 0px;
-    
+    box-shadow: $green 0px 0 20px 0px;
+
     .newsletter {
         padding: 2em;
         display: flex;
@@ -139,11 +139,12 @@ h2 {
         width: 40%;
         align-items: center;
         margin: 0 auto;
+
         h2 {
             color: white;
             margin-bottom: 0;
         }
-        
+
         .newsletterEmail {
             font-size: 2.5em;
             padding: 0.5em 1em;
@@ -170,6 +171,7 @@ h2 {
         display: flex;
         justify-content: space-evenly;
         padding: 4em;
+        margin-bottom: 0;
 
         .link {
             color: white;
@@ -228,10 +230,12 @@ h2 {
     .messaging {
         .heading {
             padding: 1em;
-            h3, .header {
+
+            h3,
+            .header {
                 margin: 0;
             }
-            
+
             h3 {
                 font-size: 2.3em;
             }
@@ -243,6 +247,28 @@ h2 {
 
         h2 {
             font-size: 2.5em;
+        }
+    }
+}
+
+@media (max-width: 970px) {
+    .footer {
+        .newsletter {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .footer {
+        .links {
+            flex-direction: column;
+
+            .link {
+                margin: 0.5em;
+            }
         }
     }
 }
