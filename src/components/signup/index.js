@@ -41,67 +41,71 @@ const SignUp = () => {
         <h1>Create an Account</h1>
         <form autoComplete="new-password" onSubmit={handleSubmit}>
           <li>
-            <p className="title">Fisrt Name</p>
             <input
               type="text"
               name="first_name"
               value={register.first_name}
               onChange={handleChange}
               placeholder={"First Name"}
+              onFocus={e => (e.target.placeholder = "")}
+              onBlur={e => (e.target.placeholder = "First Name")}
               className="First_Name"
             />
           </li>
 
           <li>
-            <p className="title">Last Name</p>
             <input
               type="text"
               name="last_name"
               value={register.last_name}
               onChange={handleChange}
               placeholder={"Last Name"}
+              onFocus={e => (e.target.placeholder = "")}
+              onBlur={e => (e.target.placeholder = "Last Name")}
               className="Last_Name"
             />
           </li>
 
           <li>
-            <p className="title">Email</p>
             <input
               type="email"
               name="email"
               value={register.email}
               onChange={handleChange}
-              placeholder={"email"}
+              placeholder={"Example@domain.com"}
+              onFocus={e => (e.target.placeholder = "")}
+              onBlur={e => (e.target.placeholder = "Example@domain.com")}
               className="email"
             />
           </li>
 
           <li>
-            <p className="title">Password</p>
             <input
               type="password"
               name="password"
               value={register.password}
               onChange={handleChange}
               placeholder={"Password"}
+              onFocus={e => (e.target.placeholder = "")}
+              onBlur={e => (e.target.placeholder = "Password")}
               className="password"
             />
           </li>
 
           <li>
-            <p className="title">Phone Number</p>
             <input
               type="tel"
               name="phone_number"
               value={register.phone_number}
               onChange={handleChange}
               placeholder={"Phone Number"}
+              onFocus={e => (e.target.placeholder = "")}
+              onBlur={e => (e.target.placeholder = "Phone Number")}
               className="tel"
             />
           </li>
 
           <li>
-            <p className="title">Are you a ...</p>
             <select
               type="checkbox"
               name="role"

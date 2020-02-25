@@ -1,9 +1,5 @@
 $green: #308C47;
 
-.formContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 
 form{
     display: flex;
@@ -11,7 +7,7 @@ form{
     flex-direction: column;
     list-style-type: none;
 }
-input, select{
+input {
     border: 2px solid #308C47;
     color: #308C47;
     background: none;
@@ -22,10 +18,11 @@ input, select{
     border-radius: 10px;
     transition: 0.25s;
     outline: none;
-    margin: 20px auto;
+    margin:20px auto;
 }
 
-
+input::placeholder{
+color:$green;
 }
 
 
@@ -46,17 +43,7 @@ input, select{
                 color: white;
             }
 
-            &:active {
+           &:active {
                 transform: translateY(5px);
             }
-        }
-    
-
-
-input::placeholder{
-color:$green;
-}
-
-option{
-color: $green;
-}
+        } 
