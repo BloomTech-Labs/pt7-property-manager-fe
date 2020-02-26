@@ -4,6 +4,11 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
+# Badges
+[![Maintainability](https://api.codeclimate.com/v1/badges/79bdb53497ece42ae50b/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-fe/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/79bdb53497ece42ae50b/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-fe/test_coverage)
+
 # 1️⃣ Title of project goes here
 
 1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
@@ -32,6 +37,7 @@
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
+
 
 1️⃣ [Trello Board](🚫add link to trello board here)
 
