@@ -12,17 +12,83 @@
     align-items: center;
     justify-content: space-around;
     font-size: 2.5em;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 200;
-    color: #308C47;
+    color: #308c47;
+  }
+
+  .main-content {
+    min-height: 100vh;
+    h2 {
+      font-size: 5rem;
+    }
+    .actionBtn{
+      width:20vw;
+      font-size:3rem;
+      padding:15px 0;
+      margin:60px;
+    }
+    .PropertyCard{
+      margin:20px;
+      img{
+        width:40%;
+      }
+    }
+    @media screen and (max-width: 575px) {
+      min-height:80vh;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .dashboard {
+    margin-bottom: 20vh;
+
+    .nav-link {
+      font-size: 1.75rem;
+    }
+
+    .bodyDiv {
+      padding-top: 50px;
+      min-height: 75vh;
+
+      h3 {
+        font-size: 4rem;
+      }
+    }
+
+    @media screen and (max-width: 575px) {
+      margin-bottom: 10vh;
+
+      .sticky-top {
+        position: static;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: column;
+
+        ul {
+          margin: 0 auto;
+        }
+      }
+      .bodyDiv {
+        padding-top: 10px;
+        min-height: 10vh;
+
+        h3 {
+          font-size: 2rem;
+        }
+      }
+    }
   }
 
   .logo {
     width: 6em;
     height: auto;
-    background-color: #308C47;
+    background-color: #308c47;
     border-radius: 0px 0px 10px 10px;
-    box-shadow: #308C47 0px 1px 5px;
+    box-shadow: #308c47 0px 1px 5px;
   }
 }
 
@@ -47,6 +113,7 @@ html {
       .navbar {
         justify-content: space-evenly;
         margin-top: 0.5em;
+        flex-wrap: wrap-reverse;
       }
     }
   }

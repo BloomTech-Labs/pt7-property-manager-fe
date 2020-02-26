@@ -60,9 +60,7 @@ export default function About() {
       <img src={best} className="house" alt="house" />
       </div>
       </div>
-      </section>
-      
-      
+      </section>      
       </div>
     </div>
   );
