@@ -21,9 +21,9 @@ export default function Home() {
             Property Manager aims to reduce communication friction between
             landlord and tenant.
           </h2>
-          <a href="/signup">
-            <button className="getStarted">Get Started</button>
-          </a>
+          {/* <button className="getStarted"> */}
+            <a href="/signup" className='getStarted'>Get Started</a>
+          {/* </button> */}
         </div>
       </section>
       <section className="ourGoals contentSection">
@@ -52,7 +52,7 @@ export default function Home() {
       <section className='signUp contentSection'>
           <div className='heading'>
             <h2 className='header'>Sign up now</h2>
-            <button className='signUpBtn'><a href='/signup'>Sign up</a></button>
+            <a href='/signup' className='signUpBtn'>Sign up</a>
           </div>
       </section>  
     </div>

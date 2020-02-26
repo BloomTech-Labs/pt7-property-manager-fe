@@ -24,7 +24,11 @@ $bp-tablet: 1260px;
             font-size: 4em;
             font-weight: 400;
         }
-        a{width:75%;}
+
+        a {
+            width: 75%;
+        }
+
         .getStarted {
             border: 2px solid $green;
             color: $green;
@@ -36,6 +40,7 @@ $bp-tablet: 1260px;
             border-radius: 10px;
             transition: 0.25s;
             outline: none;
+            margin-top: 0.25em;
 
             &:hover {
                 background: $green;
@@ -62,6 +67,40 @@ $bp-tablet: 1260px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: flex-end;
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+
+        .getStarted {
+            border: 2px solid $green;
+            color: $green;
+            background: none;
+            width: 75%;
+            font-weight: 200;
+            font-size: 3em;
+            padding: 1em 0em;
+            border-radius: 10px;
+            transition: 0.25s;
+            outline: none;
+            text-decoration: none;
+
+            &:hover {
+                background: $green;
+                color: white;
+            }
+
+            &:active {
+                transform: translateY(5px);
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                height: inherit;
+            }
+        }
+    }
 }
 
 .heading {
@@ -145,10 +184,16 @@ h2 {
             padding: 0.5em 2em;
             font-size: 2.3em;
             border: none;
-            
-            a {
-                color: white;
-                text-decoration: none;
+            color: white;
+            text-decoration: none;
+            border: 2px solid $green;
+            transition: ease-in-out 0.2s;
+            margin-top: 0.25em;
+
+            &:hover {
+                border: 2px solid $green;
+                background: none;
+                color: $green;
             }
         }
     }
@@ -285,6 +330,7 @@ h2 {
             width: 100%;
             margin: 0;
             padding: 0;
+            padding-top: 2em;
         }
     }
 }
