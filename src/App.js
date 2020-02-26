@@ -56,12 +56,12 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/Properties" component={Properties} />
           <Route exact path="/Properties/:property_id" component={Property} />
+          <Route exact path="/Manager" component={Managers} />
           <Route exact path="/Manager/add-renter" component={addRenter} />
           <Route exact path="/Manager/add-property" component={addProperty} />
           <Route exact path="/Manager/settings" component={managerSettings} />
-          <Route exact path="/Renter/settings" component={renterSettings} />
           <Route path="/Manager/:manager_id" component={Manager} />
-          <Route exact path="/Manager" component={Managers} />
+          <Route exact path="/Renter/settings" component={renterSettings} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Login" component={Login} />
