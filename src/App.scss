@@ -47,6 +47,7 @@ html {
       .navbar {
         justify-content: space-evenly;
         margin-top: 0.5em;
+        flex-wrap: wrap-reverse;
       }
     }
   }

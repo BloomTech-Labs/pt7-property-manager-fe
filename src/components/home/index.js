@@ -30,7 +30,13 @@ export default function Home() {
           <h2 className='header'>Messaging made easier</h2>
           <h3>With Property Manager, message your landlord, submit work orders, and set alerts without switching between apps.</h3>
         </div>
-      </section>    
+      </section>  
+      <section className='signUp contentSection'>
+          <div className='heading'>
+            <h2 className='header'>Sign up now</h2>
+            <button className='signUpBtn'><a href='/signup'>Sign up</a></button>
+          </div>
+      </section>  
     </div>
   );
 }
