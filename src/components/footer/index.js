@@ -12,7 +12,7 @@ export default function Footer() {
       <ul className='links'>
         <li className='link'><a href='/contact'>Contact us</a></li>
         <li className='link'><a href='/faq'>FAQs</a></li>
-        <li className='link'><a href='/meet'>Meet the team</a></li>
+        <li className='link'><a href='/about'>Meet the team</a></li>
       </ul>
     </footer>
   );

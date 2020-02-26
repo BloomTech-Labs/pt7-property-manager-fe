@@ -20,6 +20,8 @@ class Contact extends Component {
           <input name='phoneNum' type='tel' required maxLength='10' placeholder='1234567890'></input>
           <label for='subject'>Subject</label>
           <input name='subject' type='text' required placeholder='e.g. Payment Plans'></input>
+          <label for='message'>Brief message</label>
+          <textarea className='message' name='message' maxLength='250' placeholder='250 characters max'></textarea>
           <div className='buttonHolder'>
             <button className='cancelBtn' type='reset'>Cancel</button>
             <button className='submitBtn'>Submit</button>
