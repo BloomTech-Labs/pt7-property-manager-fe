@@ -10,7 +10,7 @@ class Contact extends Component {
 
   render() {
     return ( 
-      <div className='contactFormHolder'>
+      <div className='contactFormHolder main-content'>
         <form className='contactForm'>
           <label for='fullName'>Full Name</label>
           <input name='fullname' type='text' required placeholder='John Smith' autoFocus></input>
