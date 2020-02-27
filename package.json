@@ -55,5 +55,12 @@
   "bugs": {
     "url": "https://github.com/Lambda-School-Labs/pt7-property-manager-fe/issues"
   },
-  "homepage": "https://github.com/Lambda-School-Labs/pt7-property-manager-fe#readme"
+  "homepage": "https://github.com/Lambda-School-Labs/pt7-property-manager-fe#readme",
+  "jest": {
+    "collectCoverageFrom": [
+    "**/*.{js,jsx}",
+		"!**/node_modules/**",
+    "!**/vendor/**" 
+   ]
+  }
 }
