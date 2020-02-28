@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1582777103151" clover="3.2.0">
-  <project timestamp="1582777103151" name="All files">
+<coverage generated="1582778521923" clover="3.2.0">
+  <project timestamp="1582778521923" name="All files">
     <metrics statements="150" coveredstatements="0" conditionals="355" coveredconditionals="0" methods="68" coveredmethods="0" elements="573" coveredelements="0" complexity="0" loc="150" ncloc="150" packages="4" files="7" classes="7"/>
     <package name="coverage.lcov-report">
       <metrics statements="106" coveredstatements="0" conditionals="323" coveredconditionals="0" methods="52" coveredmethods="0"/>
