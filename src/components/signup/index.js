@@ -27,9 +27,9 @@ const SignUp = () => {
       .post("Link HERE", register) // end point here!!
       .then(res => {
         console.log(res);
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("id", res.data.id);
-        localStorage.setItem("username", res.data.username);
+        sessionStorage.setItem("token", res.data.token);
+        sessionStorage.setItem("id", res.data.id);
+        sessionStorage.setItem("username", res.data.username);
 
         setRegister(defaul);
       })

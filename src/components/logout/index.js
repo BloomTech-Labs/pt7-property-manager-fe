@@ -3,7 +3,7 @@ import {Route, Redirect} from "react-router-dom";
 export default function Logout() {
 
   let logout=function(){
-    localStorage.removeItem('role');
+    sessionStorage.clear();
    return(<Route>
      <Redirect to="/" />
    </Route>);

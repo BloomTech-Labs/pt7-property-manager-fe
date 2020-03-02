@@ -10,7 +10,8 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText} from "reactstrap";
-export default function UserNav() {
+export default function UserNav(props) {
+	const {toggle, isOpen, setIsOpen}=props;
    const [scrolled, setScrolled] = useState({});
    useEffect(() => {
      const handleScroll = _ => {
@@ -23,7 +24,7 @@ export default function UserNav() {
        window.removeEventListener("scroll", handleScroll);
      };
    }, []);
-   console.log(scrolled);
+   //console.log(scrolled);
   return (
         <Navbar color="light" sticky={`${scrolled}`} light expand="sm">
           <Nav className="mr-auto" navbar>

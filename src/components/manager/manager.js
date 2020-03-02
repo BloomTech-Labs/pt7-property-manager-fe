@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import PropertyCard from "../properties/PropertyCard.js";
+import PropertyCard from "./PropertyCard.js";
+import {Link} from "react-router-dom";
+import {Button} from "reactstrap";
+import "./index.scss";
 
 export default function Manager(props){
   const [manager, setManager] = useState({
@@ -18,11 +21,11 @@ export default function Manager(props){
     axios
       .get(`https://property-manager-be.herokuapp.com/users/${props.match.params.manager_id}`)
       .then(res => {
-        console.log(res.data.user);
-        setManager(res.data.user);
+        console.log(res.data);
+        //setManager(res.data);
       
         axios
-          .get(`https://property-manager-be.herokuapp.com/manager/properties/${props.match.params.manager_id}`)
+          .get(`https://property-manager-be.herokuapp.com/properties/manager/${props.match.params.manager_id}`)
           .then(res => {
             console.log(res.data.properties);
             setManager({...manager, properties:res.data.properties});
@@ -48,6 +51,8 @@ export default function Manager(props){
           {manager.properties.map(property=>(
             <div key={property.id}>
               <PropertyCard property={property}/>
+				<Button color="success"><Link to={`/properties/${property.id}`}>Apply Now</Link></Button>
+				<hr/>
             </div>
           ))}
       </div>
