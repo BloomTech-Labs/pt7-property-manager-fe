@@ -14,11 +14,12 @@ export default function AddProperty() {
         let postProperty={name:name, img:img, manager_id:sessionStorage.getItem('userID')};
 		//console.log(sessionStorage);
 		//console.log(postProperty);
-		axios
-        //axiosWithAuth()
-			.post("https://property-manager-be.herokuapp.com/properties", postProperty)
+		//axios
+		axiosWithAuth()
+			.post("/properties", postProperty)
           .then(res => {
             console.log(res.data.prop);
+			setProperty(res.data.prop);
           }).catch(err => {
               console.error(err);
         // { property_id:2, name: "Slums", manager_id: 2 }]);

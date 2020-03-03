@@ -2,22 +2,23 @@ import React,{useState, useEffect} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import './index.scss';
+import {axiosWithAuth} from "../../utils/axiosWithAuth";
 export default function Property(props){
   const [property, setProperty]=useState({});
   useEffect(() => {
-    axios
-      .get(`https://property-manager-be.herokuapp.com/properties/${props.match.params.property_id}`)
+    axiosWithAuth()
+      .get(`/properties/${props.match.params.property_id}`)
       .then(res => {
         console.log(res.data.property);
         setProperty(res.data.property);
           
-            axios
+            axiosWithAuth()
               .get(
-                `https://property-manager-be.herokuapp.com/users/${property.manager_id}`
+                `/users/${property.manager_id}`
               )
               .then(res => {
                 console.log(res.data);
-                setProperty(...property, {manager:res.data});
+                //setProperty(...property, {manager:res.data});
               })
               .catch(err => {
                 console.error(err);
