@@ -21,10 +21,10 @@ export default function Managers() {
   ]);
   useEffect(() => {
     axios
-      .get("https://property-manager-be.herokuapp.com/users")
+      .get("https://property-manager-be.herokuapp.com/users/Manager")
       .then(res => {
-        console.log(res.data.users);
-        setManagers(res.data.users);
+        console.log(res.data.Managers);
+        setManagers(res.data.Managers);
       })
       .catch(err => {
         console.error(err);

@@ -4,13 +4,13 @@ import { Button } from "reactstrap";
 
 export default function Guest() {
   let renterPreview = function() {
-    localStorage.setItem("role", "Renter");
+    sessionStorage.setItem("role", "Renter");
     window.location.reload(false);
     return;
   };
 
   let managerPreview = function() {
-    localStorage.setItem("role", "Manager");
+    sessionStorage.setItem("role", "Manager");
     window.location.reload(false);
     return;
   };

@@ -26,9 +26,9 @@ import managerSettings from "./components/manager/settings.js";
 import renterSettings from "./components/renter/settings.js";
 function App() {
   const [user, setUser] = useState({
-    username: localStorage.getItem("username"),
-    user_id: localStorage.getItem("user+id"),
-    role: localStorage.getItem("role")
+    username: sessionStorage.getItem("username"),
+    user_id: sessionStorage.getItem("user+id"),
+    role: sessionStorage.getItem("role")
   });
 
   let userType=user.role;
@@ -67,8 +67,7 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Logout" component={Logout} />
-          <PrivateRoute exact path="/Dashboard" component={dashboard()} />
-          <PrivateRoute path="/Dashboard/:id/Notifications" component={Notifications} />
+          <Route exact path="/Dashboard" component={dashboard()} />
         </Switch>
         <Footer />
       </div>
