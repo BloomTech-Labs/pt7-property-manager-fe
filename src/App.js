@@ -26,7 +26,7 @@ import managerSettings from "./components/manager/settings.js";
 import renterSettings from "./components/renter/settings.js";
 
 // for testing only //
-import ManagerCard from "./components/manager/managerCard.js";
+// import ManagerCard from "./components/manager/managerCard.js";
 
 function App() {
   const [user, setUser] = useState({
@@ -75,7 +75,7 @@ function App() {
           <PrivateRoute path="/Dashboard/:id/Notifications" component={Notifications} />
 
           {/* testing */}
-          <Route exact path='/Manager/los' component={ManagerCard}/> 
+          {/* <Route exact path='/Manager' component={ManagerCard}/>  */}
         </Switch>
         <Footer />
       </div>

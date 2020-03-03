@@ -1,11 +1,7 @@
 import React from "react";
+import los from "../../icons/los.jfif";
 
-class ManagerCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-  render() {
+const ManagerCard = (props) => {
     return (
       // <div className="managerCard">
       //   <img src={this.props.profilePic} alt={this.props.managerName} className='profilePic'></img>
@@ -14,14 +10,17 @@ class ManagerCard extends React.Component {
       //   <h4 className='managerEmail'>{this.props.managerEmail}</h4>
       // </div>
       <div className="managerCard">
-        {/* <img src={this.props.profilePic} alt={this.props.managerName} className='profilePic'></img> */}
-        <h3 className="managerName">Carlos</h3>
-        <h4 className="telNumber">1234567890</h4>
-        <h4 className='managerEmail'>los@gmail.com</h4>
+        <img src={los} alt='los' className='profilePic'></img>
+        <div className='info'>
+          <h3 className="managerName">{props.managerName}</h3>
+          <h4 className="telNumber">{props.phoneNumber}</h4>
+          <h4 className='managerEmail'>{props.email}</h4> 
+          <div className='buttonHolder'>
+            <a className='viewPropsBtn' href='/Manager/:manager_id'>View Properties</a>
+          </div>                   
+        </div>
       </div>
     );    
-  }
-
 };
 
 export default ManagerCard;

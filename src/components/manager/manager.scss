@@ -50,6 +50,13 @@ html {
                     border: 1px solid #308C47;
                     background: none;
                     padding: 10px;
+                    transition: ease-in-out 0.2s;
+
+                    &:hover {
+                        text-decoration: none;
+                        background: #308C47;
+                        color: white;
+                    }
                 }
             }
         }
