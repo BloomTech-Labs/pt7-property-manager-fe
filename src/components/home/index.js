@@ -10,9 +10,9 @@ export default function Home() {
             Find your new home with <br></br>
             Property Manager
           </h1>
-          <button className="getStarted">
-            <a href="#propertyManager">Get Started</a>
-          </button>
+          <a href="#propertyManager">
+            <button className="getStarted">Learn More</button>
+          </a>
         </div>
       </section>
       <section id="propertyManager" className="propertyManager contentSection">
@@ -21,6 +21,9 @@ export default function Home() {
             Property Manager aims to reduce communication friction between
             landlord and tenant.
           </h2>
+          <a href="/signup">
+            <button className="getStarted">Get Started</button>
+          </a>
         </div>
       </section>
       <section className="ourGoals contentSection">
@@ -45,7 +48,13 @@ export default function Home() {
             and set alerts without switching between apps.
           </h3>
         </div>
-      </section>
+      </section>  
+      <section className='signUp contentSection'>
+          <div className='heading'>
+            <h2 className='header'>Sign up now</h2>
+            <button className='signUpBtn'><a href='/signup'>Sign up</a></button>
+          </div>
+      </section>  
     </div>
   );
 }

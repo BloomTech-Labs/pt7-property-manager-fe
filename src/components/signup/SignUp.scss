@@ -1,0 +1,19 @@
+.formContainer {
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    // border: 1px solid red; // for visual reference 
+
+
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        list-style-type: none;
+
+        button {
+            width: 120px;
+            margin: 10px auto;
+        }
+    }
+}
