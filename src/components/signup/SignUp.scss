@@ -1,62 +1,109 @@
-$green: #308C47;
+$main: #308C47;
 
-.formContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.contactFormHolder {
 
-form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    list-style-type: none;
-}
-input, select{
-    border: 2px solid #308C47;
-    color: #308C47;
-    background: none;
-    width: 340px;
-    font-weight: 400;
-    font-size: 3em;
-    padding: .5em 0em;
-    border-radius: 10px;
-    transition: 0.25s;
-    outline: none;
-    margin: 20px auto;
-}
+    .contactForm {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        margin: 0 auto;
+        text-align: left;
+        justify-content: space-evenly;
+        height: 65em;
 
-
-}
-
-
-        .submit {
-            border: 2px solid $green;
-            color: $green;
-            background: none;
-            width: 340px;
-            font-weight: 400;
-            font-size: 3em;
-            padding: .5em 0em;
-            border-radius: 10px;
-            transition: 0.25s;
-            margin: 40px auto;
+        label {
+            font-size: 2.2em;
+            color: $main;
+            margin-bottom: 0;
+        }
+        input {
+            font-size: 2.6em;
+            padding: 5px;
             outline: none;
-            &:hover {
-                background: $green;
-                color: white;
+            border: none;
+            border-bottom: 2px solid $main;
+            caret-color: $main;
+
+            ::placeholder {
+                color: black;
             }
+            &:focus {
+                box-shadow: 0 6px 6px -6px black;
+            }
+        }
+       
+        .buttonHolder {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .cancelBtn, .submitBtn {
+            padding: 0.5em 1em;
+            border: none;
+            font-size: 2em;
+            margin: 0 1em;
+            outline: none;
+            transition: ease-in-out 0.1s;
 
             &:active {
                 transform: translateY(5px);
             }
+            &:hover {
+                box-shadow: 0 6px 6px -6px black;
+            }
         }
-    
 
+        .cancelBtn {
+            background: none;
+            color: $main;
+            border-bottom: 2px solid $main;
+        }
 
-input::placeholder{
-color:$green;
+        .submitBtn {
+            background-color: $main;
+            color: white;
+            border-radius: 5px;
+        }
+    }
 }
+//***************************************************
 
-option{
-color: $green;
+.search_categories{
+    font-size: 13px;
+    padding: 10px 8px 10px 14px;
+    background: #fff;
+    border: 2px solid $main;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .search_categories .select{
+    width: 120%;
+    // background:url('arrow.png') no-repeat;
+    background-position:80% center;
+  }
+  
+  .search_categories .select select{
+    background: transparent;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 83%;
+    position: relative;
+    z-index: 10;
+    font-size: 2.6em;
+    color:gray;
+  }
+
+//*******************************************************
+
+@media (max-width: 700px) {
+    .contactFormHolder {
+        .contactForm {
+            width: 80%;
+        }
+    }
+
 }
