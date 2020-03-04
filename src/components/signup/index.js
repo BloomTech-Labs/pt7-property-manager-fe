@@ -13,7 +13,7 @@ import "./SignUp.scss";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 
-const SignUp = () => {
+const SignUp = (props) => {
   const defaul = {
     firstName: "",
     lastName: "",
@@ -27,21 +27,22 @@ const SignUp = () => {
   const handleChange = e => {
     setRegister({ ...register, [e.target.name]: e.target.value });
   };
-  console.log(register);
  
   const handleSubmit = e => {
     e.preventDefault();
    
-    axiosWithAuth()
-      .post("auth/register", register) // end point here!!
-      .then(res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("id", res.data.id);
-        
-        setRegister(defaul);
-      })
-      .catch(err => console.log(err));
+ axios.post("https://property-manager-be.herokuapp.com/auth/register", register)
+    .then(res=>{ console.log(res.data.user); 
+      console.log(res.data.token); 
+      sessionStorage.clear(); 
+      sessionStorage.setItem('token', res.data.token); 
+      sessionStorage.setItem('userID', res.data.user.id); 
+      sessionStorage.setItem('firstName', res.data.user.firstName); 
+      sessionStorage.setItem('lastName', res.data.user.lastName);
+      sessionStorage.setItem('phoneNumber', res.data.user.phoneNumber);
+      sessionStorage.setItem('role', res.data.user.role);
+      sessionStorage.setItem('img', res.data.user.img); 
+      props.history.push('/dashboard'); })
       document.getElementById('signUpForm').reset();
   };
 
@@ -63,9 +64,7 @@ const SignUp = () => {
               className="First_Name" required autoFocus
             />
              
-
-        
-          <label for='last_name'>Last Name</label>
+             <label for='last_name'>Last Name</label>
             <input
               type="text"
               name="lastName"
@@ -76,9 +75,6 @@ const SignUp = () => {
               onBlur={e => (e.target.placeholder = "Last Name")}
               className="Last_Name" required
             />
-        
-
-      
             <label for='email'>Email</label>
             <input
               type="email"
@@ -90,10 +86,7 @@ const SignUp = () => {
               onBlur={e => (e.target.placeholder = "Example@domain.com")}
               className="email" required
             />
-        
-
-         
-          <label for='password'>Password</label>
+            <label for='password'>Password</label>
             <input
               type="password"
               name="password"
@@ -104,10 +97,7 @@ const SignUp = () => {
               onBlur={e => (e.target.placeholder = "Password")}
               className="password" required
             />
-     
-
-     
-          <label for='phone_number'>Phone Number</label>
+            <label for='phone_number'>Phone Number</label>
             <input
               type="tel"
               name="phoneNumber"
@@ -118,9 +108,7 @@ const SignUp = () => {
               onBlur={e => (e.target.placeholder = "Phone Number")}
               className="tel"
             />
-       
-
-          <div class="search_categories">
+         <div class="search_categories">
          <div class="select">
             <select
               type="checkbox"
@@ -145,56 +133,4 @@ const SignUp = () => {
   );
 };
 
-// ROUTE USER TO LOGIN PAGE AFTER CREATING ACCOUNT
-
 export default SignUp;
-
-
-
-////***************************************************** */
-
-{/* <div className='contactFormHolder main-content'>
-        <form className='contactForm'>
-          <label for='fullName'>Full Name</label>
-          <input name='fullname' type='text' required placeholder='John Smith' autoFocus></input>
-          <label for='email'>Email</label>
-          <input name='email' type='email' required placeholder='example@email.com'></input>
-          <label for='phoneNum'>Phone Number</label>
-          <input name='phoneNum' type='tel' required maxLength='10' placeholder='1234567890'></input>
-          <label for='subject'>Subject</label>
-          <input name='subject' type='text' required placeholder='e.g. Payment Plans'></input>
-          <label for='message'>Brief message</label>
-          <textarea className='message' name='message' maxLength='250' placeholder='250 characters max'></textarea>
-          <div className='buttonHolder'>
-            <button className='cancelBtn' type='reset'>Cancel</button>
-            <button className='submitBtn' type="submit">Submit</button>
-          </div>
-        </form>
-      </div> */}
-
-//**************************************************************************** */
-{/* <div class="select-box">
-    <div class="select-box__current" tabindex="1">
-        <div class="select-box__value"><input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked" />
-            <p class="select-box__input-text">Cream</p>
-        </div>
-        <div class="select-box__value"><input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked" />
-            <p class="select-box__input-text">Cheese</p>
-        </div>
-        <div class="select-box__value"><input class="select-box__input" type="radio" id="2" value="3" name="Ben" checked="checked" />
-            <p class="select-box__input-text">Milk</p>
-        </div>
-        <div class="select-box__value"><input class="select-box__input" type="radio" id="3" value="4" name="Ben" checked="checked" />
-            <p class="select-box__input-text">Honey</p>
-        </div>
-        <div class="select-box__value"><input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked" />
-            <p class="select-box__input-text">Toast</p>
-        </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
-    <ul class="select-box__list">
-        <li><label class="select-box__option" for="0" aria-hidden="aria-hidden">Cream</label></li>
-        <li><label class="select-box__option" for="1" aria-hidden="aria-hidden">Cheese</label></li>
-        <li><label class="select-box__option" for="2" aria-hidden="aria-hidden">Milk</label></li>
-        <li><label class="select-box__option" for="3" aria-hidden="aria-hidden">Honey</label></li>
-        <li><label class="select-box__option" for="4" aria-hidden="aria-hidden">Toast</label></li>
-    </ul>
-</div> */}
