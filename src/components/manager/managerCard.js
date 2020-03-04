@@ -1,5 +1,5 @@
 import React from "react";
-import los from "../../icons/los.jfif";
+// import los from "../../icons/los.jfif";
 
 const ManagerCard = (props) => {
     return (
@@ -10,13 +10,13 @@ const ManagerCard = (props) => {
       //   <h4 className='managerEmail'>{this.props.managerEmail}</h4>
       // </div>
       <div className="managerCard">
-        <img src={los} alt='los' className='profilePic'></img>
+        <img src={props.img} alt={props.firstName} className='profilePic'></img>
         <div className='info'>
-          <h3 className="managerName">{props.managerName}</h3>
+          <h3 className="managerName">{props.firstName}</h3>
           <h4 className="telNumber">{props.phoneNumber}</h4>
           <h4 className='managerEmail'>{props.email}</h4> 
           <div className='buttonHolder'>
-            <a className='viewPropsBtn' href='/Manager/:manager_id'>View Properties</a>
+            <a className='viewPropsBtn' href='/Manager/'>View Properties</a>
           </div>                   
         </div>
       </div>
