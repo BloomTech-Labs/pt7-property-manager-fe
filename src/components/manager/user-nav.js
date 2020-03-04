@@ -28,7 +28,7 @@ export default function UserNav(props) {
   return (
         <Navbar color="light" sticky={`${scrolled}`} light expand="sm">
           <Nav className="mr-auto" navbar>
-            <NavItem>
+	  {/*            <NavItem>
               <NavLink href="#notifications">
                 Notifications
               </NavLink>
@@ -38,7 +38,7 @@ export default function UserNav(props) {
                 Applications
               </NavLink>
             </NavItem>
-            {/* <NavItem>
+			 <NavItem>
               <NavLink href="#workOrders">
                 Work Orders
               </NavLink>
@@ -56,12 +56,12 @@ export default function UserNav(props) {
                     Add Property
                   </NavLink>
                 </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
+			{/*  <DropdownItem divider />
+				  <DropdownItem>
                   <NavLink href="./Manager/add-renter">
                     Add Renter
                   </NavLink>
-                </DropdownItem>
+                </DropdownItem>*/}
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

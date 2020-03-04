@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import {axiosWithAuth} from '../../utils/axiosWithAuth.js';
+import "./addProperty.scss";
+import {Button} from "reactstrap";
 export default function AddProperty() {
     const [property, setProperty]=useState({});
 
@@ -28,10 +30,10 @@ export default function AddProperty() {
   return (
     <div className="main-content">
         <h2>Add Property</h2>
-      <form>
+      <form className="addPropForm">
           <input type="text" required placeholder="Property Name" name="name" />
           <input type="text" placeholder="Image Link" name="img" />
-          <input type="submit" value="Add Property" onClick={(e)=>postProperty(e)}/>
+          <Button color="success" type="submit" onClick={(e)=>postProperty(e)}>Add Property</Button>
       </form>
     </div>
   );

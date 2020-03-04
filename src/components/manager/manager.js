@@ -4,37 +4,21 @@ import PropertyCard from "./PropertyCard.js";
 import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
 import "./index.scss";
+import {axiosWithAuth} from '../../utils/axiosWithAuth';
+import './index.scss';
 
 export default function Manager(props){
-  const [manager, setManager] = useState({
-    email: "fake@fake.com",
-    phoneNumber: "1234567890",
-    firstName: "Mister",
-    lastName: "Rogers",
-    role: "Manager",
-    properties:[
-      {property_id: 1, name: "The White House", manager_id: 1 },
-         { property_id:5, name: "Tiny Home Down by the River", manager_id: 1}
-    ]
-  });
+	const [manager, setManager] = useState({});
+	const [properties, setProperties]=useState([]);
+	const [error, setError]=useState("");
   useEffect(() => {
-    axios
-      .get(`https://property-manager-be.herokuapp.com/users/${props.match.params.manager_id}`)
-      .then(res => {
-        console.log(res.data);
-        //setManager(res.data);
-      
-        axios
-          .get(`https://property-manager-be.herokuapp.com/properties/manager/${props.match.params.manager_id}`)
+        axiosWithAuth()
+          .get(`/properties/manager/${props.match.params.manager_id}`)
           .then(res => {
-            console.log(res.data.properties);
-            setManager({...manager, properties:res.data.properties});
+            console.log(res.data);
+			setManager(res.data.manager);
+			setProperties(res.data.properties);
           })
-          .catch(err => {
-            console.error(err);
-          });
-      
-      })
       .catch(err => {
         console.error(err);
       });
@@ -42,13 +26,13 @@ export default function Manager(props){
   return(
   
     <div className="main-content">
-      <h2>Manager: {manager.firstName} {manager.lastName}</h2>
+      <h2>{manager.firstName} {manager.lastName} & Associates</h2>
       <img src={manager.img} alt="Insert Image location into img column of Manager/User Table to display" />
       <p> Email: {manager.email}</p>
       <p> Phone: {manager.phoneNumber}</p>
       <div className="managerProperties">
-      <h3>Properties Managed by {manager.firstName}:</h3>
-          {manager.properties.map(property=>(
+      <h3>Properties Managed by {manager.firstName+' '+manager.lastName}:</h3>
+          {properties.map(property=>(
             <div key={property.id}>
               <PropertyCard property={property}/>
 				<Button color="success"><Link to={`/properties/${property.id}`}>Apply Now</Link></Button>

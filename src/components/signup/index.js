@@ -118,8 +118,8 @@ const SignUp = (props) => {
               className="inputField_checkbox" required
             >
               <option value="">Please choose one option</option>
-              <option value="landlord">Landlord</option>
-              <option value="tenant">Tenant</option>
+              <option value="Manager">Manager</option>
+              <option value="Renter">Renter</option>
             </select>
             </div>
          </div>

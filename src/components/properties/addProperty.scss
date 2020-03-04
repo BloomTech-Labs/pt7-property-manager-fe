@@ -1,0 +1,13 @@
+.addPropForm{
+	display:flex;
+	flex-direction:column;
+	height:50vh;
+	align-items:center;
+	padding-top:40px;
+	justify-content: flex-start;
+	.btn, input{
+		margin:10px;
+		width:20%;
+		font-size:2rem;
+	}
+}
