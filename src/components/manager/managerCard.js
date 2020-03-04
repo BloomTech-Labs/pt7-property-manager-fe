@@ -12,7 +12,7 @@ const ManagerCard = (props) => {
       <div className="managerCard">
         <img src={props.img} alt={props.firstName} className='profilePic'></img>
         <div className='info'>
-          <h3 className="managerName">{props.firstName}</h3>
+          <h3 className="managerName">{props.firstName} {props.lastName}</h3>
           <h4 className="telNumber">{props.phoneNumber}</h4>
           <h4 className='managerEmail'>{props.email}</h4> 
           <div className='buttonHolder'>
