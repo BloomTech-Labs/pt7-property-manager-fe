@@ -3,7 +3,7 @@ import axios from "axios";
 import {axiosWithAuth} from '../../utils/axiosWithAuth.js';
 import "./addProperty.scss";
 import {Button} from "reactstrap";
-export default function AddProperty() {
+export default function AddProperty(props) {
     const [property, setProperty]=useState({});
 
 	let postProperty=(e)=>{
@@ -20,8 +20,9 @@ export default function AddProperty() {
 		axiosWithAuth()
 			.post("/properties", postProperty)
           .then(res => {
-            console.log(res.data.prop);
+            //console.log(res.data.prop);
 			setProperty(res.data.prop);
+			props.history.push(`/properties/${res.data.prop.id}`); 
           }).catch(err => {
               console.error(err);
         // { property_id:2, name: "Slums", manager_id: 2 }]);

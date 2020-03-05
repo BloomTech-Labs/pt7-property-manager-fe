@@ -1,19 +1,20 @@
 import React, { useState, useContext } from "react";
 import "./nav.scss";
+import {Link} from 'react-router-dom';
 import UserContext from "../../contexts/userContext";
 export default function Navigation() {
   const { user } = useContext(UserContext);
   let loggedIn = () => {
     if (sessionStorage.getItem("token")) {
       return (
-        <a href="/logout">
+        <Link to="/logout">
           <nav-item>Logout</nav-item>
-        </a>
+        </Link>
       );
     } else {
       return (
         <nav-item>
-          <a href="/login" >Login</a> | <a href="/signup">Signup</a>
+          <Link to="/login" >Login</Link> | <Link to="/signup">Signup</Link>
         </nav-item>
       );
     }
@@ -21,24 +22,24 @@ export default function Navigation() {
   let notManager = () => {
     if (sessionStorage.getItem("role")!='Manager') {
       return (
-        <a href="/properties">
+        <Link to="/properties">
           <nav-item>Properties</nav-item>
-        </a>
+        </Link>
       );
     } 
   };
   return (
     <div className="navbar">
-      <a href="/dashboard">
+      <Link to="/dashboard">
         <nav-item>Dashboard</nav-item>
-      </a>
+      </Link>
 		{notManager()}
-      <a href="/about">
+      <Link to="/about">
         <nav-item>About</nav-item>
-      </a>
-      <a href="/contact">
+      </Link>
+      <Link to="/contact">
         <nav-item>Contact</nav-item>
-      </a>
+      </Link>
       {loggedIn()}
     </div>
   );

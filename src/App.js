@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/navigation/";
@@ -15,8 +15,6 @@ import UserPage from "./components/manager";
 import { UserProvider } from "./contexts/userContext";
 import Footer from "./components/footer";
 import logo from './icons/pm.png'
-import Renter from "./components/renter";
-import Guest from "./components/renter/guest";
 import Managers from "./components/manager/all";
 import Manager from "./components/manager/manager";
 import addProperty from "./components/properties/addProperty.js";
@@ -29,18 +27,6 @@ function App() {
     user_id: sessionStorage.getItem("user+id"),
     role: sessionStorage.getItem("role")
   });
-
-  let userType=user.role;
-  let dashboard=function(){
-    if(user.role==='Manager'){
-      return UserPage;
-    }else if(user.role==='Renter'){
-      return Renter;
-    }else{
-      return Guest;
-    }
-  }
-
 
   return (
     <UserProvider value={{ user, setUser }}>
@@ -66,7 +52,7 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Logout" component={Logout} />
-          <Route exact path="/Dashboard" component={dashboard()} />
+          <Route exact path="/Dashboard" component={UserPage} />
         </Switch>
         <Footer />
       </div>

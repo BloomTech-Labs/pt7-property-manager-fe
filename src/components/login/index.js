@@ -7,11 +7,11 @@
 * Coded by Carlos Mitchell 
 =========================================================
 */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import "./LogIn.scss";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
-
+import UserContext from "../../contexts/userContext";
 
 const SignUp = (props) => {
   const defaul = {
@@ -22,6 +22,7 @@ const SignUp = (props) => {
     phoneNumber: "",
     role: ""
   };
+const { user, setUser } = useContext(UserContext);
  const [register, setRegister] = useState(defaul);
 
   const handleChange = e => {
@@ -33,7 +34,8 @@ const SignUp = (props) => {
     e.preventDefault();
    
     axios.post("https://property-manager-be.herokuapp.com/auth/login", register)
-    .then(res=>{ console.log(res.data.user); 
+    .then(res=>{ 
+	  console.log(res.data.user); 
       console.log(res.data.token); 
       sessionStorage.clear(); 
       sessionStorage.setItem('token', res.data.token); 
@@ -43,6 +45,9 @@ const SignUp = (props) => {
       sessionStorage.setItem('phoneNumber', res.data.user.phoneNumber);
       sessionStorage.setItem('role', res.data.user.role);
       sessionStorage.setItem('img', res.data.user.img); 
+	 setUser(
+		 res.data.user
+	 );
       props.history.push('/dashboard'); })
 
       document.getElementById('signUpForm').reset();
