@@ -14,7 +14,6 @@ import PrivateRoute from "./components/PrivateRoute.js";
 import UserPage from "./components/manager";
 import { UserProvider } from "./contexts/userContext";
 import Footer from "./components/footer";
-import Notifications from "./components/manager/notifications";
 import logo from './icons/pm.png'
 import Renter from "./components/renter";
 import Guest from "./components/renter/guest";
