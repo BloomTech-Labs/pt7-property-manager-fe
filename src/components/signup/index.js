@@ -7,13 +7,14 @@
 * Coded by Carlos Mitchell 
 =========================================================
 */
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import axios from "axios";
 import "./SignUp.scss";
+import userContext from "../../contexts/userContext";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
-
 const SignUp = (props) => {
+const {user, setUser}=useContext(userContext);
   const defaul = {
     firstName: "",
     lastName: "",
@@ -42,6 +43,7 @@ const SignUp = (props) => {
       sessionStorage.setItem('phoneNumber', res.data.user.phoneNumber);
       sessionStorage.setItem('role', res.data.user.role);
       sessionStorage.setItem('img', res.data.user.img); 
+		setUser(res.data.user);
       props.history.push('/dashboard'); })
       document.getElementById('signUpForm').reset();
   };

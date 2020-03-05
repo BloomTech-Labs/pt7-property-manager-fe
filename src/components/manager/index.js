@@ -5,8 +5,10 @@ import {Button, Collapse} from 'reactstrap';
 import PropertyCard from './PropertyCard';
 import {axiosWithAuth} from '../../utils/axiosWithAuth';
 import {Link} from "react-router-dom";
-
+import Renter from "../renter/index.js";
+import Guest from "../renter/guest";
 export default function UserPage(props) {
+	const [user, setUser]=useState({role:sessionStorage.getItem('role'), userID:sessionStorage.getItem('userID'), firstName: sessionStorage.getItem('firstName'), lastName:sessionStorage.getItem('lastName')});
 	const ids=['notifications', 'applications', 'workOrders', 'properties'];
 	const toggle=(e)=>{
 		//console.log(e.target.parentNode);
@@ -35,7 +37,12 @@ export default function UserPage(props) {
 				console.error(err);
 			});
 	}, []);
+if(user.role==='Renter'){
+	return(
+		<Renter/>
+	)
 
+}else if(user.role==='Manager'){
 	return (
 		<div className="dashboard main-content">
 		<h2>Manager Dashboard</h2>
@@ -82,4 +89,9 @@ export default function UserPage(props) {
 		</div>
 		</div>
 	)
-};
+}else{
+	return(
+		<Guest/>
+	)
+
+}};
