@@ -19,7 +19,7 @@ function Managers() {
             key={manager.id} firstName={manager.firstName} lastName={manager.lastName} 
             img={manager.img === null ? blankImg : manager.img}
             phoneNumber={manager.phoneNumber === null ? '0000000000' : manager.phoneNumber} 
-            email={manager.email}/>
+            email={manager.email} id={manager.id}/>
         ))}
       </div>
     )

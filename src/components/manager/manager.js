@@ -1,20 +1,31 @@
-import React from "react";
-import los from "../../icons/los.jfif";
+import React, { useState, useEffect, useRef } from "react";
+// import los from "../../icons/los.jfif";
 import './manager.scss'
+import axios from 'axios'
 
-export default function Manager(){
-
-
+const Manager = () => {
+  const [manager, setManager] = useState([])
+  const managerID = sessionStorage.getItem('id')
+  useEffect(() => {
+    axios
+      .get(`https://property-manager-be.herokuapp.com/users/manager/${managerID}`)
+      .then((res) => {
+        console.log(res)
+        setManager(res.data.manager)
+      })
+      .then((err) => console.log(err))
+  })
+  const blankImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FNo_portrait_blanko.svg%2F480px-No_portrait_blanko.svg.png&f=1&nofb=1'
   return(
     <div className="cardHolder">
       {/* <h2>One Manager's Info Gets Loaded here</h2>
       <p>Don't forget to include a list of all properties that manager has. </p> */}
       <div className="managerCard">
-        <img src={los} alt='los' className='profilePic'></img>
+        <img src={manager.img === null ? blankImg : manager.img} alt={manager.firstName} className='profilePic'></img>
         <div className='info'>
-          <h3 className="managerName">Carlos</h3>
-          <h4 className="telNumber">1234567890</h4>
-          <h4 className='managerEmail'>los@gmail.com</h4> 
+          <h3 className="managerName">{manager.firstName} {manager.lastName}</h3>
+          <h4 className="telNumber">{manager.phoneNumber === null ? '0000000000' : manager.phoneNumber}</h4>
+          <h4 className='managerEmail'>{manager.email}</h4> 
           <div className='buttonHolder'>
             <button className='viewPropsBtn'>View Properties</button>
           </div>                   
@@ -23,3 +34,5 @@ export default function Manager(){
     </div>
   )
 }
+
+export default Manager
