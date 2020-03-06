@@ -13,8 +13,8 @@ import "./LogIn.scss";
 import UserContext from "../../contexts/userContext";
 
 const SignUp = (props) => {
-const { user, setUser } = useContext(UserContext);
- const [register, setRegister] = useState(user);
+const { setUser } = useContext(UserContext);
+ const [register, setRegister] = useState({email:"", name:""});
 
   const handleChange = e => {
     setRegister({ ...register, [e.target.name]: e.target.value });
