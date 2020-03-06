@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import axios from "axios";
+import React from 'react';
 import {axiosWithAuth} from '../../utils/axiosWithAuth.js';
 import "./addProperty.scss";
 import {Button} from "reactstrap";
 export default function AddProperty(props) {
-    const [property, setProperty]=useState({});
 
 	let postProperty=(e)=>{
         e.preventDefault();
@@ -12,7 +10,6 @@ export default function AddProperty(props) {
         let name=e.target.parentNode.childNodes[0].value;
         let img=e.target.parentNode.childNodes[1].value;
         //console.log(name, img);
-        setProperty({name:name, img:img, manager_id:sessionStorage.getItem('user id')});
         let postProperty={name:name, img:img, manager_id:sessionStorage.getItem('userID')};
 		//console.log(sessionStorage);
 		//console.log(postProperty);
@@ -21,7 +18,6 @@ export default function AddProperty(props) {
 			.post("/properties", postProperty)
           .then(res => {
             //console.log(res.data.prop);
-			setProperty(res.data.prop);
 			props.history.push(`/properties/${res.data.prop.id}`); 
           }).catch(err => {
               console.error(err);

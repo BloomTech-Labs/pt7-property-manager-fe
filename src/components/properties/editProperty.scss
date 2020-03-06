@@ -1,0 +1,17 @@
+.editPropForm{
+	display:flex;
+	flex-direction:column;
+	height:50vh;
+	align-items:center;
+	padding-top:40px;
+	justify-content: flex-start;
+	.btn, input, a{
+		margin:10px;
+		width:20%;
+		font-size:2rem;
+	}
+	a .btn{
+		width:100%;
+		margin:0px;
+	}
+}

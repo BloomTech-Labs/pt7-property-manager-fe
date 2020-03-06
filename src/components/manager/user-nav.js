@@ -11,7 +11,6 @@ import {
   DropdownItem,
   NavbarText} from "reactstrap";
 export default function UserNav(props) {
-	const {toggle, isOpen, setIsOpen}=props;
    const [scrolled, setScrolled] = useState({});
    useEffect(() => {
      const handleScroll = _ => {

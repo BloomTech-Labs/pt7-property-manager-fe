@@ -1,5 +1,4 @@
 import React,{useState, useEffect} from "react";
-import axios from "axios";
 import {Link} from "react-router-dom";
 import './index.scss';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
@@ -10,7 +9,7 @@ export default function Property(props){
     axiosWithAuth()
       .get(`/properties/${props.match.params.property_id}`)
       .then(res => {
-        console.log(res.data.property);
+        //console.log(res.data.property);
         setProperty(res.data.property);
           
             axiosWithAuth()
@@ -18,7 +17,7 @@ export default function Property(props){
                 `/users/${res.data.property.manager_id}`
               )
               .then(res => {
-                console.log(res.data.user);
+                //console.log(res.data.user);
 				setManager(res.data.user);
               })
               .catch(err => {
@@ -28,13 +27,13 @@ export default function Property(props){
       .catch(err => {
         console.error(err);
       });
-  }, []);
+  }, [props.match.params.property_id]);
   return (
     <div className="main-content">
       <h2>{property.name}</h2>
       <img
         src={property.img}
-        alt="Insert Image location into img column of Property Table to display"
+        alt="Insert into Property Table to display"
       />
       <h3>
         Managed by{" "}

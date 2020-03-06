@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState} from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 import Navigation from "./components/navigation/";
@@ -10,7 +10,7 @@ import Contact from "./components/contact";
 import Logout from "./components/logout/";
 import Properties from "./components/properties";
 import Property from "./components/properties/Property";
-import PrivateRoute from "./components/PrivateRoute.js";
+//import PrivateRoute from "./components/PrivateRoute.js";
 import UserPage from "./components/manager";
 import { UserProvider } from "./contexts/userContext";
 import Footer from "./components/footer";
@@ -18,6 +18,7 @@ import logo from './icons/pm.png'
 import Managers from "./components/manager/all";
 import Manager from "./components/manager/manager";
 import addProperty from "./components/properties/addProperty.js";
+import EditProperty from "./components/properties/editProperty.js";
 import addRenter from "./components/manager/addRenter.js";
 import managerSettings from "./components/manager/settings.js";
 import renterSettings from "./components/renter/settings.js";
@@ -44,6 +45,7 @@ function App() {
           <Route exact path="/Manager" component={Managers} />
           <Route exact path="/Manager/add-renter" component={addRenter} />
           <Route exact path="/Manager/add-property" component={addProperty} />
+          <Route exact path="/Manager/edit-property/:propertyId" component={EditProperty} />
           <Route exact path="/Manager/settings" component={managerSettings} />
           <Route path="/Manager/:manager_id" component={Manager} />
           <Route exact path="/Renter/settings" component={renterSettings} />

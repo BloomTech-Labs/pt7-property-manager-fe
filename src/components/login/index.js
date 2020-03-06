@@ -10,25 +10,16 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import "./LogIn.scss";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import UserContext from "../../contexts/userContext";
 
 const SignUp = (props) => {
-  const defaul = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    phoneNumber: "",
-    role: ""
-  };
-const { user, setUser } = useContext(UserContext);
- const [register, setRegister] = useState(defaul);
+const { setUser } = useContext(UserContext);
+ const [register, setRegister] = useState({email:"", name:""});
 
   const handleChange = e => {
     setRegister({ ...register, [e.target.name]: e.target.value });
   };
-  console.log(register);
+  //console.log(register);
  
   const handleSubmit = e => {
     e.preventDefault();

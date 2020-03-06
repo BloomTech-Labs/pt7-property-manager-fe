@@ -1,9 +1,7 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import "./nav.scss";
 import {Link} from 'react-router-dom';
-import UserContext from "../../contexts/userContext";
 export default function Navigation() {
-  const { user } = useContext(UserContext);
   let loggedIn = () => {
     if (sessionStorage.getItem("token")) {
       return (
@@ -20,7 +18,7 @@ export default function Navigation() {
     }
   };
   let notManager = () => {
-    if (sessionStorage.getItem("role")!='Manager') {
+    if (sessionStorage.getItem("role")!=='Manager') {
       return (
         <Link to="/properties">
           <nav-item>Properties</nav-item>
