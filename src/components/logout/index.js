@@ -3,7 +3,7 @@ import {Route, Redirect} from "react-router-dom";
 import userContext from "../../contexts/userContext";
 export default function Logout() {
 
-const {user, setUser}=useContext(userContext);
+const {setUser}=useContext(userContext);
   let logout=function(){
     sessionStorage.clear();
 	setUser();

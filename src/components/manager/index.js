@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useContext, useEffect} from "react";
 // import PrivateRoute from "../PrivateRoute.js";
 import UserNav from "./user-nav";
-import {Button, Collapse} from 'reactstrap';
+import {Collapse} from 'reactstrap';
 import PropertyCard from './PropertyCard';
 import {axiosWithAuth} from '../../utils/axiosWithAuth';
-import {Link} from "react-router-dom";
 import Renter from "../renter/index.js";
+import userContext from "../../contexts/userContext";
 import Guest from "../renter/guest";
 export default function UserPage(props) {
-	const [user, setUser]=useState({role:sessionStorage.getItem('role'), userID:sessionStorage.getItem('userID'), firstName: sessionStorage.getItem('firstName'), lastName:sessionStorage.getItem('lastName')});
+
+	const {user}=useContext(userContext);
 	const ids=['notifications', 'applications', 'workOrders', 'properties'];
 	const toggle=(e)=>{
 		//console.log(e.target.parentNode);
@@ -17,9 +18,10 @@ export default function UserPage(props) {
 		ids.map(id=>{
 			//console.log(id);
 			//console.log(e.target.parentNode);
-			if(id==e.target.parentNode.id){
-				e.target.nextSibling.classList.toggle('show');
+			if(id===e.target.parentNode.id){
+				return e.target.nextSibling.classList.toggle('show');
 			}
+			return null;
 		});
 		//console.log(e.target.nextSibling.classList);
 
