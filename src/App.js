@@ -22,6 +22,10 @@ import EditProperty from "./components/properties/editProperty.js";
 import addRenter from "./components/manager/addRenter.js";
 import managerSettings from "./components/manager/settings.js";
 import renterSettings from "./components/renter/settings.js";
+
+// for testing only //
+// import ManagerCard from "./components/manager/managerCard.js";
+
 function App() {
   const [user, setUser] = useState({
     username: sessionStorage.getItem("username"),
@@ -55,6 +59,9 @@ function App() {
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Logout" component={Logout} />
           <Route exact path="/Dashboard" component={UserPage} />
+
+          {/* testing */}
+          {/* <Route exact path='/Manager' component={ManagerCard}/>  */}
         </Switch>
         <Footer />
       </div>
