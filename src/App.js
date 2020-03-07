@@ -19,7 +19,8 @@ import Managers from "./components/manager/all";
 import Manager from "./components/manager/manager";
 import addProperty from "./components/properties/addProperty.js";
 import addRenter from "./components/manager/addRenter.js";
-import managerSettings from "./components/manager/settings.js";
+// import managerSettings from "./components/manager/settings.js";
+import managerSettings from "./components/settings/settings.js";
 import renterSettings from "./components/renter/settings.js";
 function App() {
   const [user, setUser] = useState({

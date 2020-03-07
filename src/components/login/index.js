@@ -24,6 +24,7 @@ const SignUp = (props) => {
   };
 const { user, setUser } = useContext(UserContext);
  const [register, setRegister] = useState(defaul);
+console.log('Usercontex@login', user);
 
   const handleChange = e => {
     setRegister({ ...register, [e.target.name]: e.target.value });
