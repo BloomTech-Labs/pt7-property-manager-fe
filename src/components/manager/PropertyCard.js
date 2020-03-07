@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
 import axios from "axios";
-
 export default function PropertyCard(props){
   let {property}=props;
   //console.log(property);
@@ -16,12 +14,12 @@ export default function PropertyCard(props){
       .catch(err => {
         console.error(err);
         });
-  }, []);
+  }, [manager.id]);
 
   return(
-    <div style={{minHeight:"30vh",margin:"20px"}}>
+    <div style={{minHeight:"30vh",margin:"20px", display:"flex", flexDirection:'column', alignItems:'center', justifyContent:'space-evenly'}}>
       <h3>{property.name}</h3>
-      <img src={property.img} alt="Insert Image location into img column of Property Table to display"/>
+      <img src={property.img} alt="Insert location into Property Table to display"/>
     </div>  
   )
 }

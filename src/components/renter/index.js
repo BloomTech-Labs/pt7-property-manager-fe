@@ -13,9 +13,10 @@ export default function Renter(){
 		ids.map(id=>{
 			//console.log(id);
 			//console.log(e.target.parentNode);
-			if(id==e.target.parentNode.id){
-				e.target.nextSibling.classList.toggle('show');
+			if(id===e.target.parentNode.id){
+				return e.target.nextSibling.classList.toggle('show');
 			}
+			return null;
 		});
 		//console.log(e.target.nextSibling.classList);
 

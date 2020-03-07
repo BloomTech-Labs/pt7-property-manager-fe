@@ -10,10 +10,10 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import "./LogIn.scss";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import UserContext from "../../contexts/userContext";
 
 const SignUp = (props) => {
+<<<<<<< HEAD
   const defaul = {
     firstName: "",
     lastName: "",
@@ -25,11 +25,15 @@ const SignUp = (props) => {
 const { user, setUser } = useContext(UserContext);
  const [register, setRegister] = useState(defaul);
 console.log('Usercontex@login', user);
+=======
+const { setUser } = useContext(UserContext);
+ const [register, setRegister] = useState({email:"", name:""});
+>>>>>>> 0db133baae72321b27cfdafc43bfe7e23984b79c
 
   const handleChange = e => {
     setRegister({ ...register, [e.target.name]: e.target.value });
   };
-  console.log(register);
+  //console.log(register);
  
   const handleSubmit = e => {
     e.preventDefault();
