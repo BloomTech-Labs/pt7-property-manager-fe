@@ -21,10 +21,10 @@ export default function Managers() {
     <div className="cardHolder">
       <h2>List of Managers</h2>
       {managers.map(manager => (
-        <div key={manager.email}>
+        manager.role==='Manager'?(<div key={manager.email}>
           <ManagerCard manager={manager} img={manager.img===null? blankImg: manager.img} />
         </div>
-      ))}
+      ):null))}
     </div>
   );
 }
