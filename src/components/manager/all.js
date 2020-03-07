@@ -18,14 +18,17 @@ export default function Managers() {
   }, []);
   const blankImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FNo_portrait_blanko.svg%2F480px-No_portrait_blanko.svg.png&f=1&nofb=1'
   return (
-    <div className="cardHolder">
-      <h2>List of Managers</h2>
+<div className="main-content">
+	<h2>List of Managers</h2>
+	<div className="cardHolder">
       {managers.map(manager => (
-        manager.role==='Manager'?(<div key={manager.email}>
-          <ManagerCard manager={manager} img={manager.img===null? blankImg: manager.img} />
-        </div>
-      ):null))}
+        manager.role==='Manager'?(
+			<div key={manager.email}>
+			  <ManagerCard manager={manager} img={manager.img===null? blankImg: manager.img} />
+			</div>
+		  ):null))}
     </div>
+</div>
   );
 }
 
