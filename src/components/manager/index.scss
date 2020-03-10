@@ -1,0 +1,21 @@
+.managerProperties{
+	div{
+		margin:40px auto;
+	}	
+	a{
+		text-decoration:none;
+		color:#FFF;
+		font-size:2rem;
+	}
+	img{
+		width:60vw;
+	}
+}
+.main-content{
+	#notifications, #applications, #workOrders, #properties{
+      padding-top: 50px;
+	  p{
+		font-size:2rem;
+	  }
+	}
+}

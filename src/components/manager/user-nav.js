@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText} from "reactstrap";
-export default function UserNav() {
+export default function UserNav(props) {
    const [scrolled, setScrolled] = useState({});
    useEffect(() => {
      const handleScroll = _ => {
@@ -23,11 +23,11 @@ export default function UserNav() {
        window.removeEventListener("scroll", handleScroll);
      };
    }, []);
-   console.log(scrolled);
+   //console.log(scrolled);
   return (
         <Navbar color="light" sticky={`${scrolled}`} light expand="sm">
           <Nav className="mr-auto" navbar>
-            <NavItem>
+	  {/*            <NavItem>
               <NavLink href="#notifications">
                 Notifications
               </NavLink>
@@ -37,7 +37,7 @@ export default function UserNav() {
                 Applications
               </NavLink>
             </NavItem>
-            {/* <NavItem>
+			 <NavItem>
               <NavLink href="#workOrders">
                 Work Orders
               </NavLink>
@@ -55,12 +55,12 @@ export default function UserNav() {
                     Add Property
                   </NavLink>
                 </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
+			{/*  <DropdownItem divider />
+				  <DropdownItem>
                   <NavLink href="./Manager/add-renter">
                     Add Renter
                   </NavLink>
-                </DropdownItem>
+                </DropdownItem>*/}
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

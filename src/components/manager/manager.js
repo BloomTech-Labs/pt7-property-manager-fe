@@ -1,43 +1,42 @@
-import React, { useState, useEffect, useRef } from "react";
-// import los from "../../icons/los.jfif";
-import './manager.scss'
-import axios from 'axios'
+import React, {useState, useEffect} from "react";
+import PropertyCard from "./PropertyCard.js";
+import {Link} from "react-router-dom";
+import {Button} from "reactstrap";
+import "./index.scss";
+import {axiosWithAuth} from '../../utils/axiosWithAuth';
+import './index.scss';
 
-const Manager = () => {
-  const [manager, setManager] = useState([])
-  const managerID = sessionStorage.getItem('id')
+export default function Manager(props){
+	const [manager, setManager] = useState({});
+	const [properties, setProperties]=useState([]);
   useEffect(() => {
-    axios
-      .get(`https://property-manager-be.herokuapp.com/users/manager/${managerID}`)
-      .then((res) => {
-        console.log(res)
-        setManager(res.data.manager)
-      })
-      .catch((err) => console.log(err))
-  }, [setManager])
-
-  const getProperties = () => {
-    axios.get(`https://property-manager-be.herokuapp.com/properties/${managerID}`)
-      .then((res) => {
-        console.log(res.data)
-      })
+        axiosWithAuth()
+          .get(`/properties/manager/${props.match.params.manager_id}`)
+          .then(res => {
+            //console.log(res.data);
+			setManager(res.data.manager);
+			setProperties(res.data.properties);
+          })
       .catch(err => {
-        console.log('there was an error: ', err)
-      })
-  }
-  const blankImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FNo_portrait_blanko.svg%2F480px-No_portrait_blanko.svg.png&f=1&nofb=1'
+        console.error(err);
+      });
+  }, [props.match.params.manager_id]);
   return(
-    <div className="cardHolder">
-      <div className="managerCard">
-        <img src={manager.img === null ? blankImg : manager.img} alt={manager.firstName} className='profilePic'></img>
-        <div className='info'>
-          <h3 className="managerName">{manager.firstName} {manager.lastName}</h3>
-          <h4 className="telNumber">{manager.phoneNumber === null ? '0000000000' : manager.phoneNumber}</h4>
-          <h4 className='managerEmail'>{manager.email}</h4> 
-          <div className='buttonHolder'>
-            <button className='viewPropsBtn' onClick={getProperties()}>View Properties</button>
-          </div>                   
-        </div>
+  
+    <div className="main-content">
+      <h2>{manager.firstName} {manager.lastName} & Associates</h2>
+      <img src={manager.img} alt="Insert into Manager/User Table to display" />
+      <p> Email: {manager.email}</p>
+      <p> Phone: {manager.phoneNumber}</p>
+      <div className="managerProperties">
+      <h3>Properties Managed by {manager.firstName+' '+manager.lastName}:</h3>
+          {properties.map(property=>(
+            <div key={property.id}>
+              <PropertyCard property={property}/>
+				<Button color="success"><Link to={`/properties/${property.id}`}>Apply Now</Link></Button>
+				<hr/>
+            </div>
+          ))}
       </div>
     </div>
   )

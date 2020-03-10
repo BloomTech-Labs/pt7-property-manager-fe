@@ -1,23 +1,24 @@
 import React,{useState, useEffect} from "react";
-import axios from "axios";
 import {Link} from "react-router-dom";
-
+import './index.scss';
+import {axiosWithAuth} from "../../utils/axiosWithAuth";
 export default function Property(props){
-  const [property, setProperty]=useState({});
+	const [property, setProperty]=useState({});
+	const [manager, setManager]=useState({});
   useEffect(() => {
-    axios
-      .get(`https://property-manager-be.herokuapp.com/properties/${props.match.params.property_id}`)
+    axiosWithAuth()
+      .get(`/properties/${props.match.params.property_id}`)
       .then(res => {
-        console.log(res.data.property);
+        //console.log(res.data.property);
         setProperty(res.data.property);
           
-            axios
+            axiosWithAuth()
               .get(
-                `https://property-manager-be.herokuapp.com/users/${property.manager_id}`
+                `/users/${res.data.property.manager_id}`
               )
               .then(res => {
-                console.log(res.data);
-                setProperty(...property, {manager:res.data});
+                //console.log(res.data.user);
+				setManager(res.data.user);
               })
               .catch(err => {
                 console.error(err);
@@ -26,18 +27,17 @@ export default function Property(props){
       .catch(err => {
         console.error(err);
       });
-  }, []);
-
+  }, [props.match.params.property_id]);
   return (
     <div className="main-content">
       <h2>{property.name}</h2>
       <img
         src={property.img}
-        alt="Insert Image location into img column of Property Table to display"
+        alt="Insert into Property Table to display"
       />
       <h3>
         Managed by{" "}
-        <Link to={`/manager/${property.manager_id}`}> {property.manager_id}</Link>{" "}
+        <Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
       </h3>
     </div>
   );

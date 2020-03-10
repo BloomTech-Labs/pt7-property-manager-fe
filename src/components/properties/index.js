@@ -10,7 +10,7 @@ export default function Properties() {
     axios
       .get("https://property-manager-be.herokuapp.com/properties")
       .then(res => {
-        console.log(res.data.properties);
+        //console.log(res.data.properties);
         setProperties(res.data.properties);
       })
       .catch(err => {

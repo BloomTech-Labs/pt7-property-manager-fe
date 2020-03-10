@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Route, Redirect} from "react-router-dom";
+import userContext from "../../contexts/userContext";
 export default function Logout() {
 
+const {setUser}=useContext(userContext);
   let logout=function(){
-    localStorage.removeItem('role');
+    sessionStorage.clear();
+	setUser();
    return(<Route>
      <Redirect to="/" />
    </Route>);
