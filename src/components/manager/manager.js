@@ -13,13 +13,21 @@ const Manager = () => {
         console.log(res)
         setManager(res.data.manager)
       })
-      .then((err) => console.log(err))
-  })
+      .catch((err) => console.log(err))
+  }, [setManager])
+
+  const getProperties = () => {
+    axios.get(`https://property-manager-be.herokuapp.com/properties/${managerID}`)
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.log('there was an error: ', err)
+      })
+  }
   const blankImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FNo_portrait_blanko.svg%2F480px-No_portrait_blanko.svg.png&f=1&nofb=1'
   return(
     <div className="cardHolder">
-      {/* <h2>One Manager's Info Gets Loaded here</h2>
-      <p>Don't forget to include a list of all properties that manager has. </p> */}
       <div className="managerCard">
         <img src={manager.img === null ? blankImg : manager.img} alt={manager.firstName} className='profilePic'></img>
         <div className='info'>
@@ -27,7 +35,7 @@ const Manager = () => {
           <h4 className="telNumber">{manager.phoneNumber === null ? '0000000000' : manager.phoneNumber}</h4>
           <h4 className='managerEmail'>{manager.email}</h4> 
           <div className='buttonHolder'>
-            <button className='viewPropsBtn'>View Properties</button>
+            <button className='viewPropsBtn' onClick={getProperties()}>View Properties</button>
           </div>                   
         </div>
       </div>
