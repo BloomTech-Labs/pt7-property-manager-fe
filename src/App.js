@@ -10,7 +10,7 @@ import Contact from "./components/contact";
 import Logout from "./components/logout/";
 import Properties from "./components/properties";
 import Property from "./components/properties/Property";
-//import PrivateRoute from "./components/PrivateRoute.js";
+import PrivateRoute from "./components/PrivateRoute.js";
 import UserPage from "./components/manager";
 import { UserProvider } from "./contexts/userContext";
 import Footer from "./components/footer";
@@ -44,18 +44,18 @@ function App() {
           <Route exact path="/Properties" component={Properties} />
           <Route exact path="/Properties/:property_id" component={Property} />
           <Route exact path="/Manager" component={Managers} />
-          <Route exact path="/Manager/add-renter" component={addRenter} />
-          <Route exact path="/Manager/add-property" component={addProperty} />
-          <Route exact path="/Manager/edit-property/:propertyId" component={EditProperty} />
-          <Route exact path="/Manager/settings" component={managerSettings} />
+          <PrivateRoute exact path="/Manager/add-renter" component={addRenter} />
+          <PrivateRoute exact path="/Manager/add-property" component={addProperty} />
+          <PrivateRoute exact path="/Manager/edit-property/:propertyId" component={EditProperty} />
+          <PrivateRoute exact path="/Manager/settings" component={managerSettings} />
           <Route path="/Manager/:manager_id" component={Manager} />
-          <Route exact path="/Renter/settings" component={renterSettings} />
+          <PrivateRoute exact path="/Renter/settings" component={renterSettings} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Logout" component={Logout} />
-          <Route exact path="/Dashboard" component={UserPage} />
+          <PrivateRoute exact path="/Dashboard" component={UserPage} />
         </Switch>
         <Footer />
       </div>
