@@ -7,20 +7,22 @@
 * Coded by Carlos Mitchell 
 =========================================================
 */
-import React, { useState, useContext } from "react";
+import React, { useState, useContext} from "react";
+import {Link} from "react-router-dom"
 import axios from "axios";
 import "./LogIn.scss";
 import UserContext from "../../contexts/userContext";
 
 const SignUp = (props) => {
-const { setUser } = useContext(UserContext);
- const [register, setRegister] = useState({email:"", name:""});
-
+  const initialState = {email: "", password: ""}
+  const { setUser } = useContext(UserContext);
+  const [register, setRegister] = useState({email: "", password: ""});
+  const [valid, setValid]=useState({badCredentials:false})
+   
   const handleChange = e => {
     setRegister({ ...register, [e.target.name]: e.target.value });
   };
-  //console.log(register);
- 
+  
   const handleSubmit = e => {
     e.preventDefault();
    
@@ -35,36 +37,55 @@ const { setUser } = useContext(UserContext);
       sessionStorage.setItem('lastName', res.data.user.lastName);
       sessionStorage.setItem('phoneNumber', res.data.user.phoneNumber);
       sessionStorage.setItem('role', res.data.user.role);
-      sessionStorage.setItem('img', res.data.user.img); 
+      sessionStorage.setItem('img', res.data.user.img);
+      sessionStorage.setItem('email', res.data.user.email);
+
 	 setUser(
 		 res.data.user
 	 );
-      props.history.push('/dashboard'); })
-
-      document.getElementById('signUpForm').reset();
-  };
-
-  return (
+      props.history.push('/dashboard');
+      console.log(res.data)
+    })
+      .catch(err=>{
+      console.error("provide right credentials",err);
+      setValid({badCredentials:true})
+      setRegister(initialState)
+      });
+    };
+  // console.log("badcredentials", valid.badCredentials)
+  
+  const TheSignup = ()=>{
+    return(
+      <span className="saccount">
+    <Link to="/signup">Signup for an account</Link>
+      </span>
+    )
+  }
+  let badone;
+  let hey;
+  if (valid.badCredentials === true){
+   badone = `Incorrect email or password. `;
+   hey = TheSignup();
+     }
+    return (
     <>
       <div className='contactFormHolder main-content'>
         <h1>Log in</h1>
         <form id='signUpForm' className='contactForm'autoComplete="new-password" onSubmit={handleSubmit}>
           
-           <label for='email'>Email</label>
+           <label htmlFor='email'>Email</label>
             <input
               type="email"
               name="email"
               value={register.email}
               onChange={handleChange}
               placeholder={"Example@domain.com"}
-              onFocus={e => (e.target.placeholder = "")}
+              onFocus={e => (e.target.placeholder = "" )}
+              onClick={()=>(setValid({badCredentials: false}))}
               onBlur={e => (e.target.placeholder = "Example@domain.com")}
               className="email" required
             />
-        
-
-         
-          <label for='password'>Password</label>
+            <label htmlFor='password'>Password</label>
             <input
               type="password"
               name="password"
@@ -75,9 +96,9 @@ const { setUser } = useContext(UserContext);
               onBlur={e => (e.target.placeholder = "Password")}
               className="password" required
             />
-
-          <div className='buttonHolder'>
-            <button className='cancelBtn' type='reset'>Cancel</button>
+            <div className="invalid">{badone}{hey}</div>
+            <div className='buttonHolder'>
+            <button className='cancelBtn' type='reset' onClick={()=>(setValid({badCredentials: false}))} >Cancel</button>
             <button className='submitBtn' type="submit" >Submit</button>
           </div>
         </form>

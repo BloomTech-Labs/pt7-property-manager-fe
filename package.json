@@ -19,6 +19,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "reactstrap": "^8.4.1",
+    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.0.1",
     "yup": "^0.28.1"
@@ -59,9 +60,9 @@
   "homepage": "https://github.com/Lambda-School-Labs/pt7-property-manager-fe#readme",
   "jest": {
     "collectCoverageFrom": [
-    "**/*.{js,jsx}",
-		"!**/node_modules/**",
-    "!**/vendor/**" 
-   ]
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   }
 }
