@@ -35,10 +35,10 @@ export default function Property(props){
         src={property.img}
         alt="Insert into Property Table to display"
       />
-      <h3>
+      <p style={{fontSize:"3rem"}}>
         Managed by{" "}
         <Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
-      </h3>
+      </p>
     </div>
   );
 }

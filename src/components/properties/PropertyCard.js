@@ -20,8 +20,8 @@ export default function PropertyCard(props){
 
   return(
     <div style={{minHeight:"30vh",margin:"20px"}}>
-      <h3>{property.name}</h3>
-      <p>Managed by <Link to={`/manager/${property.manager_id}`}> {property.firstName+" "+property.lastName}</Link> </p>
+      <h3 style={{fontSize:"3rem"}}>{property.name}</h3>
+      <p style={{fontSize:"2rem"}}>Managed by <Link to={`/manager/${property.manager_id}`}> {property.firstName+" "+property.lastName}</Link> </p>
       <img src={property.img} alt="Insert into Property Table to display"/>
     </div>  
   )
