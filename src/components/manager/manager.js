@@ -11,14 +11,11 @@ function Manager(props){
 	const [properties, setProperties]=useState([]);
   useEffect(() => {
         axiosWithAuth()
-          .get(`/users/manager/${props.match.params.manager_id}`)
+          .get(`/properties/manager/${props.match.params.manager_id}`)
           .then(res => {
             console.log(res.data);
-			setManager(res.data.manager);
-			// setProperties(res.data.properties);
-          })
-      .catch(err => {
-        console.error(err);
+			setManager(res.data.user);
+			 setProperties(res.data.properties);
       });
   }, [props.match.params.manager_id]);
     const blankImg = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FNo_portrait_blanko.svg%2F480px-No_portrait_blanko.svg.png&f=1&nofb=1'
@@ -34,7 +31,7 @@ function Manager(props){
           {properties.map(property=>(
             <div key={property.id}>
               <PropertyCard property={property}/>
-				<Button color="success"><Link to={`/properties/${property.id}`}>Apply Now</Link></Button>
+				<Button color="success"><Link to={`/properties/${property.id}`}>View Details</Link></Button>
 				<hr/>
             </div>
           ))}

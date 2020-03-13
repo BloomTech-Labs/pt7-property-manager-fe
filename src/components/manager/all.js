@@ -18,12 +18,13 @@ function Managers() {
     return(
       <div className="cardHolder">
         {managers.map((manager) => (
+			(manager.role==='Manager')?
           <ManagerCard 
             key={manager.id} firstName={manager.firstName} lastName={manager.lastName} 
             img={manager.img === null ? blankImg : manager.img}
             phoneNumber={manager.phoneNumber === null ? '0000000000' : manager.phoneNumber} 
             email={manager.email} id={manager.id}/>
-        ))}
+			:null))}
       </div>
     )
 };

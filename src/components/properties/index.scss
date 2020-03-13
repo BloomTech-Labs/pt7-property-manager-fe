@@ -1,3 +1,11 @@
 .main-content{
 	img{width:60vw;}
 }
+p a{
+	text-decoration:none;
+	color:#308C47;
+&:hover{
+	text-decoration:none;
+	color:#304B40;
+	}
+}
