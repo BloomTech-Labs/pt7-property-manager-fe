@@ -23,6 +23,10 @@ import addRenter from "./components/manager/addRenter.js";
 // import managerSettings from "./components/manager/settings.js";
 import managerSettings from "./components/settings/settings.js";
 import renterSettings from "./components/renter/settings.js";
+
+// for testing only //
+// import ManagerCard from "./components/manager/managerCard.js";
+
 function App() {
   const [user, setUser] = useState({
     username: sessionStorage.getItem("username"),
