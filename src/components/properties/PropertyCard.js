@@ -4,13 +4,13 @@ import axios from "axios";
 
 export default function PropertyCard(props){
   let {property}=props;
-  //console.log(property);
+  console.log(property);
   const [manager, setManager]=useState({id:property.manager_id});
   useEffect(() => {
     axios
       .get(`https://property-manager-be.herokuapp.com/users/${manager.id}`)
       .then(res => {
-        //console.log(res.data);
+        // console.log(res.data);
         setManager(res.data);
       })
       .catch(err => {
