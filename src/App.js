@@ -22,7 +22,7 @@ import EditProperty from "./components/properties/editProperty.js";
 import addRenter from "./components/manager/addRenter.js";
 // import managerSettings from "./components/manager/settings.js";
 import managerSettings from "./components/settings/settings.js";
-import renterSettings from "./components/renter/settings.js";
+//import renterSettings from "./components/renter/settings.js";
 function App() {
   const [user, setUser] = useState({
     username: sessionStorage.getItem("username"),
@@ -49,7 +49,7 @@ function App() {
           <Route exact path="/Manager/edit-property/:propertyId" component={EditProperty} />
           <Route exact path="/Manager/settings" component={managerSettings} />
           <Route path="/Manager/:manager_id" component={Manager} />
-          <Route exact path="/Renter/settings" component={renterSettings} />
+          <Route exact path="/Renter/settings" component={managerSettings} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Login" component={Login} />

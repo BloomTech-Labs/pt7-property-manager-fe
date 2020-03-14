@@ -46,7 +46,7 @@ const SignUp = (props) => {
 		<h1>Create an Account</h1>
 		<form id='signUpForm' className='contactForm'autoComplete="new-password" onSubmit={handleSubmit}>
 
-		<label for='firstName'>First Name</label>
+		<label htmlFor='firstName'>First Name</label>
 		<input 
 		type="text"
 		name="firstName"
@@ -58,7 +58,7 @@ const SignUp = (props) => {
 		className="First_Name" required autoFocus
 		/>
 
-		<label for='lastName'>Last Name</label>
+		<label htmlFor='lastName'>Last Name</label>
 		<input
 		type="text"
 		name="lastName"
@@ -69,7 +69,7 @@ const SignUp = (props) => {
 		onBlur={e => (e.target.placeholder = "Last Name")}
 		className="Last_Name" required
 		/>
-		<label for='email'>Email</label>
+		<label htmlFor='email'>Email</label>
 		<input
 		type="email"
 		name="email"
@@ -80,7 +80,7 @@ const SignUp = (props) => {
 		onBlur={e => (e.target.placeholder = "Example@domain.com")}
 		className="email" required
 		/>
-		<label for='password'>Password</label>
+		<label htmlFor='password'>Password</label>
 		<input
 		type="password"
 		name="password"
@@ -91,7 +91,7 @@ const SignUp = (props) => {
 		onBlur={e => (e.target.placeholder = "Password")}
 		className="password" required
 		/>
-		<label for='phoneNumber'>Phone Number</label>
+		<label htmlFor='phoneNumber'>Phone Number</label>
 		<input
 		type="tel"
 		name="phoneNumber"
@@ -102,8 +102,8 @@ const SignUp = (props) => {
 		onBlur={e => (e.target.placeholder = "Phone Number")}
 		className="tel"
 		/>
-		<div class="search_categories">
-		<div class="select">
+		<div className="search_categories">
+		<div className="select">
 		<select
 		type="checkbox"
 		name="role"
