@@ -35,9 +35,9 @@ export default function Navigation() {
       <Link to="/about">
         <nav-item>About</nav-item>
       </Link>
-      <Link to="/contact">
+	  {/**<Link to="/contact">
         <nav-item>Contact</nav-item>
-      </Link>
+      </Link>**/}
       {loggedIn()}
     </div>
   );

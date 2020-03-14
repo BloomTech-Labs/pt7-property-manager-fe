@@ -4,7 +4,7 @@ import "./editProperty.scss";
 import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
 export default function EditProperty(props) {
-	const [property, setProperty]=useState({});
+	const [property, setProperty]=useState({name:"", img:""});
 	useEffect(()=>{
 		axiosWithAuth()
 			.get(`/properties/${props.match.params.propertyId}`)
@@ -43,13 +43,13 @@ export default function EditProperty(props) {
 		//console.log(name, img);
 		let putProperty={name:name, img:img, manager_id:sessionStorage.getItem('userID')};
 		//console.log(sessionStorage);
-		console.log(putProperty);
+		//console.log(putProperty);
 		axiosWithAuth()
 			.put(`/properties/${props.match.params.propertyId}`, putProperty)
 			.then(res => {
-				//console.log(res.data.prop);
-				setProperty(res.data.prop);
-				props.history.push(`/properties/${res.data.prop.id}`); 
+				//console.log(res.data);
+				//setProperty(res.data.prop);
+				props.history.push(`/properties/${props.match.params.propertyId}`); 
 			}).catch(err => {
 				console.error(err);
 			});

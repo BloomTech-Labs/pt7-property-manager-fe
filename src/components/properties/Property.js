@@ -9,7 +9,7 @@ export default function Property(props){
     axiosWithAuth()
       .get(`/properties/${props.match.params.property_id}`)
       .then(res => {
-        //console.log(res.data.property);
+        console.log(res.data.property);
         setProperty(res.data.property);
           
             axiosWithAuth()
@@ -17,8 +17,8 @@ export default function Property(props){
                 `/users/${res.data.property.manager_id}`
               )
               .then(res => {
-                //console.log(res.data.user);
-				setManager(res.data.user);
+                console.log(res.data.user);
+				      setManager(res.data.user);
               })
               .catch(err => {
                 console.error(err);
@@ -35,10 +35,10 @@ export default function Property(props){
         src={property.img}
         alt="Insert into Property Table to display"
       />
-      <h3>
+      <p style={{fontSize:"3rem"}}>
         Managed by{" "}
         <Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
-      </h3>
+      </p>
     </div>
   );
 }

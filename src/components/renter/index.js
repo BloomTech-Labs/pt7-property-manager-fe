@@ -28,7 +28,7 @@ export default function Renter(){
       <div id="notifications">
 	 <h3 onClick={(e)=>toggle(e)}>Notifications</h3><Collapse className="bodyDiv show">
 		<div>
-	  <p>Notifications will go here once implemented, collapsible when clicking on heading!</p>
+	  <p>Notifications will go here once you have some!</p>
 	  </div>
 	  </Collapse>
 	  </div>
@@ -36,7 +36,7 @@ export default function Renter(){
       <div id="applications">
 	 <h3 onClick={(e)=>toggle(e)}>Applications</h3><Collapse className="bodyDiv show">
 		<div>
-	  <p>Applications will go here once implemented, collapsible when clicking on heading!</p>
+	  <p>Applications will go here once  you've applied for a property</p>
 	  </div>
 	  </Collapse>
 	  </div>
@@ -52,7 +52,7 @@ export default function Renter(){
       <div id="properties">
 	 <h3 onClick={(e)=>toggle(e)}>Saved Properties</h3><Collapse className="bodyDiv show">
 		<div>
-	  <p>Saved Properties will go here once implemented, collapsible when clicking on heading!</p>
+	  <p>Saved Properties will go here after you find some you're interested in applying for.</p>
 	  </div>
 	  </Collapse>
 	  </div>
