@@ -63,3 +63,23 @@ html {
         }
     }
 }
+
+.main-content {
+
+    .profilePic {
+        height: auto;
+        width: 30em;
+    }
+
+    p {
+        font-size: 3em;
+    }
+
+    .managerProperties {
+
+        .managedBy {
+            font-size: 2.5em;
+            color: #308C47;
+        }
+    }
+}
