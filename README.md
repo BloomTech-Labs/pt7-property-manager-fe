@@ -24,6 +24,7 @@ You can find the deployed project at [my-property-manager.herokuapp.com](my-prop
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![npm](https://img.shields.io/node/v/@cycle/core)
 ![Node.js](https://img.shields.io/npm/v/@cycle/core)
 
 ## Project Overview
