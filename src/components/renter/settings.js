@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Settings from "../settings/settings";
 
-export default function renterSettings() {
+
+
+function renterSettings(props) {
+  
   return (
     <div className="main-content">
-      <h2>Settings</h2>
+      <Settings/>
     </div>
-  )
+  );
 }
+export default renterSettings;
+
