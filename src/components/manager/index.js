@@ -90,6 +90,7 @@ if(user.role==='Renter'){
 			</div>
 		))}
 		</div>
+		<Link to={`/Manager/add-property/`}><Button style={{marginTop:'10vh', fontSize:'2rem'}}color='success'>Add Property</Button></Link>
 		</Collapse>
 		</div>
 		</div>
