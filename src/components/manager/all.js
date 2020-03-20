@@ -9,7 +9,7 @@ function Managers() {
     Axios
       .get('https://property-manager-be.herokuapp.com/users')
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         setManagers(res.data.users)
       })
       .catch((err) => console.log(err))

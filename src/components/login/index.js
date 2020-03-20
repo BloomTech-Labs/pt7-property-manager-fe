@@ -28,8 +28,8 @@ const SignUp = (props) => {
    
     axios.post("https://property-manager-be.herokuapp.com/auth/login", register)
     .then(res=>{ 
-	    console.log(res.data.user); 
-      console.log(res.data.token); 
+		//console.log(res.data.user); 
+      //console.log(res.data.token); 
       sessionStorage.clear(); 
       sessionStorage.setItem('token', res.data.token); 
       sessionStorage.setItem('userID', res.data.user.id); 
@@ -44,7 +44,7 @@ const SignUp = (props) => {
 		 res.data.user
 	 );
       props.history.push('/dashboard');
-      console.log(res.data)
+      //console.log(res.data)
     })
       .catch(err=>{
       console.error("provide right credentials",err);
