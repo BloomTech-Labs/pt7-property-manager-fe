@@ -52,7 +52,7 @@ const SignUp = (props) => {
       setRegister(initialState)
       });
     };
-  // console.log("badcredentials", valid.badCredentials)
+ 
   
   const TheSignup = ()=>{
     return(

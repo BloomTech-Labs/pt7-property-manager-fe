@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import DeleteModal from "./DeleteModal";
 import "./settings.scss";
 
 function ManagerSettings(props) {
@@ -8,11 +9,14 @@ function ManagerSettings(props) {
     lastName: "",
     phoneNumber: "",
     email: "",
-    img: ""
+    img: "",
+    password: ""
 
   };
   const [thename, setName] = useState(thedata);
-
+   //******************************************/
+   
+   //*************************************** */
   console.log("theName", thename);
   console.log("theId", thename.id);
   const handleChange = e => {
@@ -31,8 +35,6 @@ function ManagerSettings(props) {
       editing: !toggle.editing
     });
   };
-  
- 
   console.log("togle ID", toggle.id);
   console.log("toggle", toggle);
   useEffect(()=>{
@@ -46,7 +48,7 @@ function ManagerSettings(props) {
     console.error(err);
   })},[toggle.id])
 
-  ///**********Function ************ *///
+  ///**********Function  edit request ************ *///
   const handleSubmit = e => {
     e.preventDefault(props);
 
@@ -68,8 +70,11 @@ function ManagerSettings(props) {
       
       props.history.push(`/dashboard`); 
      };
-   ///**********Function ************ *///
-  const renderEditView = () => {
+
+    ///**************MODAL***************** *///
+    
+   ///**********Function render edit form ************ *///
+  const renderEditView = (props) => {
     return (
       <div className="formBox">
         <label>First Name</label>
@@ -100,6 +105,13 @@ function ManagerSettings(props) {
           onChange={handleChange}
           value={thename.email}
         />
+         <label>New Password</label>
+        <input
+          type="password"
+          name="password"
+          onChange={handleChange}
+          value={thename.password}
+        />
         <label>Avatar</label>
          <input
           type="img"
@@ -114,12 +126,13 @@ function ManagerSettings(props) {
           <button className="cancelBtn margin" onClick={ChangeEdidMode}>
             Cancel
           </button>
+        
         </div>
       </div>
     );
   };
-  ///**********Function ************ *///
-  const redenderDefaultView = () => {
+  ///**********Function settings card ************ *///
+  const redenderDefaultView = (prop) => {
     return (
        <div>
       <div className="managerCard">
@@ -133,6 +146,7 @@ function ManagerSettings(props) {
           <button className="viewPropsBtn" onClick={ChangeEdidMode}>
             Edit
           </button>
+          
         </div>
       </div>
     </div>
@@ -146,9 +160,17 @@ function ManagerSettings(props) {
       <div className="cardHolder">
         <div >
           <div>{toggle.editing ? renderEditView() : redenderDefaultView()}</div>
+         
         </div>
       </div>
-    </div>
+      </div>
   );
+
+//********************************************* */
+
+  
+    
+ 
+  
 }
 export default ManagerSettings;
