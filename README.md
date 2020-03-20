@@ -1,58 +1,40 @@
-== Get the README cleaned up
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
 # Badges
 [![Maintainability](https://api.codeclimate.com/v1/badges/79bdb53497ece42ae50b/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-fe/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/79bdb53497ece42ae50b/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-fe/test_coverage)
 
-# 1️⃣ Title of project goes here
+# My Property Manager
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the deployed project at [my-property-manager.herokuapp.com](my-property-manager.herokuapp.com)
 
-## 4️⃣ Contributors
+## Contributors
 
 
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+| [Darren Carrillo](https://github.com/darrenjcarrillo) | [Sage Jordan](https://github.com/sage-jordan) | [Carlos Mitchell](https://github.com/nebadon1) | [Caleb Redd](https://github.com/calebredd) | [Edward Ridgely](https://github.com/etridgely) | [Carlos Sanchez](https://github.com/lohrem) |
+| :---------------------------------------------------: | :-------------------------------------------: | :--------------------------------------------: | :----------------------------------------: | :--------------------------------------------: | :-----------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-ULZR0L7JL-cd8c0f05f9eb-512" width = "200" />](https://github.com/darrenjcarrillo) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UG0RALX16-4eb2d98cbeb3-512" width = "200" />](https://github.com/sage-jordan) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGWPH7DJ4-a001bca030c9-512" width = "200" />](https://github.com/nebadon1) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGZNPKR62-adb84fddada3-512" width = "200" />](https://github.com/calebredd) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJ7M4NLTD-5fb21401f57a-512" width = "200" />](https://github.com/etridgely) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UF3J9R4LD-0bb156893420-512" width = "200" />](https://github.com/lohrem) |
+| [<img src="https://github.com/favicon.ico" width="15">](https://github.com/darrenjcarrillo)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/sage-jordan)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nebadon1)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/calebredd)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/etridgely)             |         [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lohrem)             |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/darrenjcarrillo) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/sage-jordan-3682a2a0/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/carlosamitchell/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/caleb-redd-592423120/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/edwardridgely/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 <br>
 <br>
-
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
+![npm](https://img.shields.io/node/v/@cycle/core)
+![Node.js](https://img.shields.io/npm/v/@cycle/core)
 
 ## Project Overview
 
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://trello.com/b/0ezNjJpZ/labspt7-property-manager)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/Property-Manager-387b253e7d8449128726a04f1494aca8)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
-
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+As a property owner can you imagine not being able to organize and manage your rental properties efficiently? Or getting confused with all the third-party software services you use? And as a renter can you imagine being stressed out all the time because of house issues? This is what the Property Owner and Renters are facing. Access to a single software that lets Property Owners manage her tasks in one place, allowing them to do their job effectively, efficiently, and thoroughly is not readily available.
 
 ### 4️⃣ Key Features
 
@@ -62,32 +44,28 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 -    feature four
 -    feature five
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React.js
 
-🚫 Why did you choose this framework?
+-    The most familar to us
+-    Quick
+-	 Responsive
+-    Scalable
 
--    point one
--    point two
--    point three
--    point four
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+#### Front end deployed to `Heroku`
 
-#### Front end deployed to `🚫insert service here`
+#### [Back end](https://github.com/Lambda-School-Labs/pt7-property-manager-be) built using:
 
-#### [Back end](🚫link to back end repo here) built using:
+#### Node.js
 
-#### 🚫 back end framework goes here
+-    Familar
+-    Easy to maintain
+-    Easy to read and understand
 
--    point one
--    point two
--    point three
-
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
 
 # APIs
 
@@ -202,4 +180,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/pt7-property-manager-be/README) for details on the backend of our project.

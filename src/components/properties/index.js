@@ -10,7 +10,7 @@ export default function Properties() {
     axios
       .get("https://property-manager-be.herokuapp.com/properties")
       .then(res => {
-        //console.log(res.data.properties);
+        // console.log(res.data.properties);
         setProperties(res.data.properties);
       })
       .catch(err => {
@@ -28,7 +28,7 @@ export default function Properties() {
           <div key={property.id} className="PropertyCard">
             <PropertyCard property={property} />
             <Link to={`/Properties/${property.id}`}>
-              <Button color="success" size="lg">
+              <Button color="success" style={{fontSize:"3rem"}} size="lg">
                 View Property Details
               </Button>
             </Link>
