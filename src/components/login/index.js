@@ -28,7 +28,7 @@ const SignUp = (props) => {
    
     axios.post("https://property-manager-be.herokuapp.com/auth/login", register)
     .then(res=>{ 
-	  console.log(res.data.user); 
+	    console.log(res.data.user); 
       console.log(res.data.token); 
       sessionStorage.clear(); 
       sessionStorage.setItem('token', res.data.token); 
@@ -52,7 +52,7 @@ const SignUp = (props) => {
       setRegister(initialState)
       });
     };
-  // console.log("badcredentials", valid.badCredentials)
+ 
   
   const TheSignup = ()=>{
     return(

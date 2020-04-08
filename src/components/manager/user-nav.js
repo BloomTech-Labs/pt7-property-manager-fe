@@ -45,24 +45,30 @@ export default function UserNav(props) {
             <NavItem>
               <NavLink href="#properties">Properties</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+	{/*
+			  <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                More
+				  More
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
+	*/}
+            <NavItem>
                   <NavLink href="./Manager/add-property">
                     Add Property
                   </NavLink>
+            </NavItem>
+	{/*
                 </DropdownItem>
-			{/*  <DropdownItem divider />
+			  <DropdownItem divider />
 				  <DropdownItem>
                   <NavLink href="./Manager/add-renter">
                     Add Renter
                   </NavLink>
-                </DropdownItem>*/}
+                </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> 
+	  */}
           </Nav>
           <NavbarText>
             <NavLink href="/Manager/settings">Settings</NavLink>

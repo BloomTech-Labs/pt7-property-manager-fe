@@ -53,7 +53,7 @@ function App() {
           <PrivateRoute exact path="/Manager/edit-property/:propertyId" component={EditProperty} />
           <PrivateRoute exact path="/Manager/settings" component={managerSettings} />
           <Route path="/Manager/:manager_id" component={Manager} />
-          <PrivateRoute exact path="/Renter/settings" component={renterSettings} />
+          <Route exact path="/Renter/settings" component={managerSettings} />
           <Route exact path="/About" component={About} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/Login" component={Login} />
