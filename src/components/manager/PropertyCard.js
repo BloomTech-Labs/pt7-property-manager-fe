@@ -8,17 +8,17 @@ export default function PropertyCard(props){
     axios
       .get(`https://property-manager-be.herokuapp.com/users/${manager.id}`)
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         setManager(res.data);
       })
       .catch(err => {
         console.error(err);
         });
-  }, [manager.id]);
+  }, []);
 
   return(
     <div style={{minHeight:"30vh",margin:"20px", display:"flex", flexDirection:'column', alignItems:'center', justifyContent:'space-evenly'}}>
-      <h3>{property.name}</h3>
+      <h3>{property.address} in {property.city+", "+property.state}</h3>
       <img src={property.img} alt="Insert location into Property Table to display"/>
     </div>  
   )
