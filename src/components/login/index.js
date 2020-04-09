@@ -71,7 +71,7 @@ const SignUp = (props) => {
     <>
       <div className='contactFormHolder main-content'>
         <h1>Log in</h1>
-        <form id='signUpForm' className='contactForm'autoComplete="new-password" onSubmit={handleSubmit}>
+        <form id='logInForm' className='contactForm'autoComplete="new-password" onSubmit={handleSubmit}>
           
            <label htmlFor='email'>Email</label>
             <input

@@ -2,10 +2,10 @@ $main: #308C47;
 
 .contactFormHolder {
 
-    .contactForm {
+    #logInForm {
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
         margin: 0 auto;
         text-align: left;
         justify-content: space-evenly;
@@ -67,12 +67,10 @@ $main: #308C47;
     }
 }
 
-
-@media (max-width: 700px) {
+@media (max-width: 950px) {
     .contactFormHolder {
-        .contactForm {
+        #logInForm {
             width: 80%;
         }
     }
-
 }
