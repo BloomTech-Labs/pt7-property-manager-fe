@@ -2,9 +2,9 @@ import React,{useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import './index.scss';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
-export default function Property(props){
+export default function Unit(props){
 	const [property, setProperty]=useState({});
-	const [units, setUnits]=useState([]);
+	const [unit, setUnit]=useState([]);
 	const [manager, setManager]=useState({});
   useEffect(() => {
     axiosWithAuth()
@@ -27,11 +27,11 @@ export default function Property(props){
 
 			axiosWithAuth()
 			  .get(
-                `/units/`
-              )
+				  `/units/${props.match.params.unit_id}`
+			   )
               .then(res => {
-                console.log(res.data.units);
-				setUnits(res.data.units);
+                console.log(res.data.unit);
+				setUnit(res.data.unit);
               })
               .catch(err => {
                 console.error(err);
@@ -40,7 +40,7 @@ export default function Property(props){
       .catch(err => {
         console.error(err);
       });
-  }, [props.match.params.property_id]);
+  }, [props.match.params.unit_id]);
   return (
     <div className="main-content">
       <h2>{property.name}</h2>
@@ -62,14 +62,8 @@ export default function Property(props){
 		{property.country}
       </p>
 	  <div> 
-		{[...units].map(unit=>{
-			if(unit.property_id == property.id){
-			return(
-		  <div> 
-			<p key={unit.id}>Unit {unit.number} - Available {Date(unit.date_available)}</p>
-			<p key={unit.id+"Description"}>{unit.description}</p>
-		  </div> 
-		)}})}
+		<p key={unit.id}>Unit {unit.number} - Available {Date(unit.date_available)}</p>
+		<p key={unit.id+"Description"}>{unit.description}</p>
 	  </div>
 	  
     </div>
