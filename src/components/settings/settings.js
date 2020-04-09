@@ -17,8 +17,8 @@ function ManagerSettings(props) {
    //******************************************/
    
    //*************************************** */
-  console.log("theName", thename);
-  console.log("theId", thename.id);
+  //console.log("theName", thename);
+  //console.log("theId", thename.id);
   const handleChange = e => {
     setName({ ...thename, [e.target.name]: e.target.value });
   };
@@ -35,13 +35,13 @@ function ManagerSettings(props) {
       editing: !toggle.editing
     });
   };
-  console.log("togle ID", toggle.id);
-  console.log("toggle", toggle);
+  //console.log("togle ID", toggle.id);
+  //console.log("toggle", toggle);
   useEffect(()=>{
   axiosWithAuth()
   .get(`/users/${toggle.id}`)
   .then(res=>{
-    console.log("from the GET",res.data.user)
+    //console.log("from the GET",res.data.user)
     setName(res.data.user)
   })
   .catch(err => {
@@ -55,8 +55,8 @@ function ManagerSettings(props) {
     axiosWithAuth()
       .put(`/users/${toggle.id}`, thename)
       .then(res => {
-        console.log(res.data.user);
-        console.log("the res", res);
+        //console.log(res.data.user);
+        //console.log("the res", res);
 
         setToggle({
           ...toggle,
@@ -65,7 +65,7 @@ function ManagerSettings(props) {
         
        })
       .catch(error => {
-        console.log(error);
+        //console.log(error);
       });
       
       props.history.push(`/dashboard`); 

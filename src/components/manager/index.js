@@ -28,18 +28,19 @@ export default function UserPage(props) {
 		//console.log(e.target.nextSibling.classList);
 
 	}
-
 	const [properties, setProperties] = useState([]);
 	useEffect(() => {
-		axiosWithAuth()
-			.get(`/properties/manager/${sessionStorage.getItem('userID')}`)
-			.then(res => {
-				//console.log(res.data.properties);
-				setProperties(res.data.properties);
-			})
-			.catch(err => {
-				console.error(err);
-			});
+		if(user.role==='Manager'){
+			axiosWithAuth()
+				.get(`/properties/manager/${sessionStorage.getItem('userID')}`)
+				.then(res => {
+					//console.log(res.data.properties);
+					setProperties(res.data.properties);
+				})
+				.catch(err => {
+					console.error(err);
+				});
+		}
 	}, []);
 if(user.role==='Renter'){
 	return(
