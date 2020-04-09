@@ -7,10 +7,13 @@ export default function AddProperty(props) {
 	let postProperty=(e)=>{
         e.preventDefault();
         //console.log(e.target.parentNode.childNodes);
-        let name=e.target.parentNode.childNodes[0].value;
-        let img=e.target.parentNode.childNodes[1].value;
+        let address=e.target.parentNode.childNodes[0].value;
+        let city=e.target.parentNode.childNodes[1].value;
+        let state=e.target.parentNode.childNodes[2].value;
+        let zip=e.target.parentNode.childNodes[3].value;
+        let img=e.target.parentNode.childNodes[4].value;
         //console.log(name, img);
-        let postProperty={name:name, img:img, manager_id:sessionStorage.getItem('userID')};
+        let postProperty={address:address, city:city, state:state, zip:zip, img:img, manager_id:sessionStorage.getItem('userID')};
 		//console.log(sessionStorage);
 		//console.log(postProperty);
 		//axios
@@ -28,7 +31,10 @@ export default function AddProperty(props) {
     <div className="main-content">
         <h2>Add Property</h2>
       <form className="addPropForm">
-          <input type="text" required placeholder="Property Name" name="name" />
+          <input type="text" required placeholder="Street Address" name="address" />
+          <input type="text" required placeholder="City" name="city" />
+          <input type="text" required placeholder="State" name="state" />
+          <input type="text" required placeholder="ZipCode" name="zip" />
           <input type="text" placeholder="Image Link" name="img" />
           <Button color="success" type="submit" onClick={(e)=>postProperty(e)}>Add Property</Button>
       </form>

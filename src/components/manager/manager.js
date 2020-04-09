@@ -13,7 +13,7 @@ function Manager(props){
         axiosWithAuth()
           .get(`/properties/manager/${props.match.params.manager_id}`)
           .then(res => {
-            console.log(res.data);
+            //console.log(res.data);
 			setManager(res.data.user);
 			 setProperties(res.data.properties);
       });
