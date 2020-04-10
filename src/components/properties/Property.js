@@ -18,7 +18,7 @@ export default function Property(props){
                 `/users/${res.data.property.manager_id}`
               )
               .then(res => {
-                console.log(res.data.user);
+                //console.log(res.data.user);
 			    setManager(res.data.user);
               })
               .catch(err => {
@@ -27,10 +27,10 @@ export default function Property(props){
 
 			axiosWithAuth()
 			  .get(
-                `/units/`
+				  `/properties/${props.match.params.property_id}/units`
               )
               .then(res => {
-                console.log(res.data.units);
+				//console.log(res.data.units);
 				setUnits(res.data.units);
               })
               .catch(err => {
@@ -65,9 +65,14 @@ export default function Property(props){
 		{[...units].map(unit=>{
 			if(unit.property_id == property.id){
 			return(
-		  <div> 
+		  <div class="my-5  w-100 mx-auto" style={{maxWidth:"1000px", minHeight:"300px", fontSize:"1.5rem"}} > 
+				<hr/>
 			<p key={unit.id}>Unit {unit.number} - Available {Date(unit.date_available)}</p>
-			<p key={unit.id+"Description"}>{unit.description}</p>
+				<div class="">
+					<p key={unit.id+"Description"}>{unit.description}</p>
+					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}`}><button class="btn btn-primary mx-2 btn-lg">More Info</button></Link>
+					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button class="btn btn-success mx-2 btn-lg">Apply Now</button></Link>
+			  </div> 
 		  </div> 
 		)}})}
 	  </div>

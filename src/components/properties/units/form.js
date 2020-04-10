@@ -1,8 +1,8 @@
 import React,{useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import './index.scss';
-import {axiosWithAuth} from "../../utils/axiosWithAuth";
-export default function Unit(props){
+import './../index.scss';
+import {axiosWithAuth} from "../../../utils/axiosWithAuth";
+export default function ApplicationForm(props){
 	const [property, setProperty]=useState({});
 	const [unit, setUnit]=useState([]);
 	const [manager, setManager]=useState({});
@@ -43,15 +43,6 @@ export default function Unit(props){
   }, [props.match.params.unit_id]);
   return (
     <div className="main-content">
-      <h2>{property.name}</h2>
-      <img
-        src={property.img}
-        alt="Insert into Property Table to display"
-      />
-      <p style={{fontSize:"3rem"}}>
-        Managed by{" "}
-        <Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
-      </p>
       <p style={{fontSize:"2rem"}}>
 		{property.address}
       </p>
@@ -61,9 +52,8 @@ export default function Unit(props){
       <p style={{fontSize:"2rem"}}>
 		{property.country}
       </p>
-	  <div> 
+	  <div class="mb-5"> 
 		<p key={unit.id}>Unit {unit.number} - Available {Date(unit.date_available)}</p>
-		<p key={unit.id+"Description"}>{unit.description}</p>
 	  </div>
 	  
     </div>
