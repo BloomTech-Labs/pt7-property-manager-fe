@@ -10,6 +10,8 @@ import Contact from "./components/contact";
 import Logout from "./components/logout/";
 import Properties from "./components/properties";
 import Property from "./components/properties/Property";
+import Unit from "./components/properties/units/Unit";
+import ApplicationForm from "./components/properties/units/form";
 import PrivateRoute from "./components/PrivateRoute.js";
 import UserPage from "./components/manager";
 import { UserProvider } from "./contexts/userContext";
@@ -46,6 +48,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Properties" component={Properties} />
+          <Route exact path="/Properties/:property_id/Unit/:unit_id/Apply" component={ApplicationForm} />
+          <Route exact path="/Properties/:property_id/Unit/:unit_id" component={Unit} />
           <Route exact path="/Properties/:property_id" component={Property} />
           <Route exact path="/Manager" component={Managers} />
           <PrivateRoute exact path="/Manager/add-renter" component={addRenter} />
