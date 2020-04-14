@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
 import "./index.scss";
 import {axiosWithAuth} from '../../utils/axiosWithAuth';
-import './index.scss';
 
 function Manager(props){
 	const [manager, setManager] = useState({});
@@ -23,11 +22,12 @@ function Manager(props){
   
     <div className="main-content">
       <h2>{manager.firstName} {manager.lastName} & Associates</h2>
-      <img src={manager.img === null ? blankImg : manager.img} alt="Insert into Manager/User Table to display" />
-      <p> Email: {manager.email}</p>
-      <p> Phone: {manager.phoneNumber}</p>
+      <img src={manager.img === null ? blankImg : manager.img}  className='profilePic' alt="Insert into Manager/User Table to display" />
+      <p>{manager.email}</p>
+      <p>{manager.phoneNumber}</p>
+      <hr></hr>
       <div className="managerProperties">
-      <h3>Properties Managed by {manager.firstName+' '+manager.lastName}:</h3>
+      <h3 className='managedBy'>Properties Managed by {manager.firstName+' '+manager.lastName}:</h3>
           {properties.map(property=>(
             <div key={property.id}>
               <PropertyCard property={property}/>

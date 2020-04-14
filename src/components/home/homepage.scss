@@ -34,7 +34,7 @@ $bp-tablet: 1260px;
             color: $green;
             background: none;
             width: 75%;
-            font-weight: 200;
+            font-weight: 400;
             font-size: 3em;
             padding: 1em 0em;
             border-radius: 10px;
@@ -72,12 +72,16 @@ $bp-tablet: 1260px;
         display: flex;
         flex-direction: column;
 
+        .header {
+            font-weight: 400;
+        }
+
         .getStarted {
             border: 2px solid $green;
             color: $green;
             background: none;
             width: 75%;
-            font-weight: 200;
+            font-weight: 500;
             font-size: 3em;
             padding: 1em 0em;
             border-radius: 10px;
@@ -135,11 +139,12 @@ h2 {
 
         h3 {
             font-weight: 300;
-            font-size: 2.5em;
+            font-size: 2.8em;
         }
 
         li {
             line-height: 2em;
+            font-size: 25px;
         }
     }
 }
@@ -156,11 +161,16 @@ h2 {
         display: flex;
         flex-direction: column;
         padding-right: 1.5em;
+
+        .header {
+            font-size: 3.5em;
+            font-weight: 400;
+        }
     }
 
     h3 {
         color: $green;
-        font-size: 2em;
+        font-size: 3em;
         font-weight: 300;
     }
 }
@@ -177,6 +187,10 @@ h2 {
     .heading {
         display: flex;
         flex-direction: column;
+
+        .header {
+            font-size: 4em;
+        }
 
         .signUpBtn {
             border-radius: 5px;
@@ -207,8 +221,8 @@ h2 {
 
     .newsletter {
         padding: 2em;
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
         width: 40%;
         align-items: center;
         margin: 0 auto;
@@ -216,6 +230,7 @@ h2 {
         h2 {
             color: white;
             margin-bottom: 0;
+            margin-top: 30px;
         }
 
         .newsletterEmail {
@@ -230,25 +245,28 @@ h2 {
 
         .submitBtn {
             font-size: 2.5em;
-            padding: 0.5em 2em;
+            padding: 0.25em 1.5em;
             border-radius: 5px;
             border: 2px solid white;
             background: none;
             color: white;
             margin-top: 0.5em;
+            margin-left: 0.5em;
         }
     }
 
     .links {
         list-style: none;
         display: flex;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
         padding: 4em;
         margin-bottom: 0;
 
         .link {
             color: white;
-            font-size: 2.5em;
+            font-size: 20px;
+            margin-right: 1em;
+
 
             a {
                 color: white;
@@ -284,6 +302,33 @@ h2 {
         background-position: center;
     }
 
+    .propertyManager {
+        .heading {
+            .getStarted {
+                border: 2px solid $green;
+                color: $green;
+                background: none;
+                width: 75%;
+                font-weight: 400;
+                font-size: 3em;
+                padding: 1em 0em;
+                border-radius: 10px;
+                transition: 0.25s;
+                outline: none;
+                margin-top: 0.25em;
+
+                &:hover {
+                    background: $green;
+                    color: white;
+                }
+
+                &:active {
+                    transform: translateY(5px);
+                }
+            }
+        }
+    }
+
     .ourGoals {
         .goalUl {
             width: 100%;
@@ -291,7 +336,7 @@ h2 {
             text-align: center;
 
             li {
-                font-size: 1.6em;
+                font-size: 25px;
 
                 &::before {
                     content: '- ';
@@ -307,10 +352,21 @@ h2 {
             h3,
             .header {
                 margin: 0;
+                font-size: 4em;
             }
 
             h3 {
-                font-size: 2.3em;
+                font-size: 25px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .signUp {
+        .heading {
+            .header {
+                font-size: 4em;
+                font-weight: 400;
             }
         }
     }
@@ -337,6 +393,14 @@ h2 {
 
 @media (max-width: 550px) {
     .footer {
+        .newsletter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .submitBtn {
+                width: 10em;
+            }
+        }
         .links {
             flex-direction: column;
 
