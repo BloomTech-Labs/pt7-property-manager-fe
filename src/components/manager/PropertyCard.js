@@ -25,17 +25,3 @@ export default function PropertyCard(props){
     </div>  
   )
 }
-
-
-/**
- style = {
-   {
-     minHeight: "30vh",
-     margin: "20px",
-     display: "flex",
-     flexDirection: 'column',
-     alignItems: 'center',
-     justifyContent: 'space-evenly'
-   }
- }
- */
