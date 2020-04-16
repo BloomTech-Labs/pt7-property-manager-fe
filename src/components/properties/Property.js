@@ -42,13 +42,10 @@ export default function Property(props){
       });
   }, [props.match.params.property_id]);
   return (
-    <div className="main-content">
-      <h2>{property.address}<br/>{property.city+","+property.state+" "+property.zip}</h2>
-      <img
-        src={property.img}
-        alt="Insert into Property Table to display"
-      />
-      <p style={{fontSize:"3rem"}}>
+    <div className="propertyCard">
+    <div className='propInfo contentSection'>
+      <h2 className='propertyTitle'>{property.address}<br/>{property.city+", "+property.state+" "+property.zip}</h2>
+      <p style={{fontSize:"3rem"}} className='managedBy'>
         Managed by{" "}
         <Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
       </p>
@@ -77,6 +74,18 @@ export default function Property(props){
 		)}})}
 	  </div>
 	  
+    </div>
+    <div className='contentSection'>
+      <img
+        src={property.img}
+        alt="Insert into Property Table to display"
+        className='propertyImg'
+      />      
+    </div>
+    <div className='contentSection units'>
+      units will go here
+    </div>
+
     </div>
   );
 }

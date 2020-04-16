@@ -1,11 +1,68 @@
-.main-content{
-	img{width:60vw;}
+// .main-content {
+// 	img {
+// 		width: 60vw;
+// 	}
+// }
+
+.propertyCard {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 3em 0;
+
+	.contentSection {
+		width: 33%;
+
+		.propertyImg {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.propInfo {
+		display: flex;
+		flex-direction: column;
+		font-family: 'Montserrat', sans-serif;
+	}
 }
-p a{
-	text-decoration:none;
-	color:#308C47;
-&:hover{
-	text-decoration:none;
-	color:#304B40;
+
+p a {
+	text-decoration: none;
+	color: #308C47;
+
+	&:hover {
+		text-decoration: none;
+		color: #304B40;
+	}
+}
+
+.propertiesOwned {
+
+	h3 {
+		font-family: 'Montserrat', sans-serif;
+		margin: 0.25em;
+	}
+
+	img {
+		height: 30em;
+		width: auto;
+		margin: 0.5em;
+	}
+}
+
+@media (max-width: 1100px) {
+	.propertyCard {
+		flex-direction: column;
+		align-items: center;
+
+		.contentSection {
+			width: 70%;
+		}
+
+		.propInfo {
+			.managedBy {
+				font-size: 2em;
+			}
+		}
 	}
 }
