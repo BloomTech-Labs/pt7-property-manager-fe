@@ -19,6 +19,8 @@ import Footer from "./components/footer";
 import logo from './icons/pm.png'
 import Managers from "./components/manager/all";
 import Manager from "./components/manager/manager";
+import AddUnit from "./components/properties/units/addUnit.js";
+import EditUnit from "./components/properties/units/editUnit.js";
 import addProperty from "./components/properties/addProperty.js";
 import EditProperty from "./components/properties/editProperty.js";
 import addRenter from "./components/manager/addRenter.js";
@@ -54,7 +56,9 @@ function App() {
           <Route exact path="/Manager" component={Managers} />
           <PrivateRoute exact path="/Manager/add-renter" component={addRenter} />
           <PrivateRoute exact path="/Manager/add-property" component={addProperty} />
-          <PrivateRoute exact path="/Manager/edit-property/:propertyId" component={EditProperty} />
+          <PrivateRoute exact path="/Manager/property/:property_id/Unit/Add" component={AddUnit} />
+          <PrivateRoute exact path="/Manager/property/:property_id/Unit/:unit_id/Edit" component={EditUnit} />
+          <PrivateRoute exact path="/Manager/edit-property/:property_id" component={EditProperty} />
           <PrivateRoute exact path="/Manager/settings" component={managerSettings} />
           <Route path="/Manager/:manager_id" component={Manager} />
           <Route exact path="/Renter/settings" component={managerSettings} />
