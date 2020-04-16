@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import './index.scss'
 
 export default function PropertyCard(props){
   let {property}=props;
@@ -19,10 +20,12 @@ export default function PropertyCard(props){
   }, []);
 
   return(
-    <div style={{minHeight:"30vh",margin:"20px"}}>
-      <h3 style={{fontSize:"3rem"}}>{property.address}</h3>
-      <p style={{fontSize:"2rem"}}>Managed by <Link to={`/manager/${property.manager_id}`}> {property.firstName+" "+property.lastName}</Link> </p>
-      <img src={property.img} alt="Insert into Property Table to display"/>
+    <div className='propertiesCard'>
+      <div className='propertyInfo'>
+        <h3 style={{fontSize:"3rem"}}>{property.address}</h3>
+        <p style={{fontSize:"2rem"}}>Managed by <Link to={`/manager/${property.manager_id}`}> {property.firstName+" "+property.lastName}</Link> </p>      
+      </div>
+      <img src={property.img} className='propImg' alt="Insert into Property Table to display"/>
     </div>  
   )
 }

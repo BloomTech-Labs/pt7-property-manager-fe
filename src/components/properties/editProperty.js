@@ -7,7 +7,7 @@ export default function EditProperty(props) {
 	const [property, setProperty]=useState({address:"", city:"", state:"", zip:"", img:""});
 	useEffect(()=>{
 		axiosWithAuth()
-			.get(`/properties/${props.match.params.propertyId}`)
+			.get(`/properties/${props.match.params.property_id}`)
 			.then(res=>{
 				//console.log(res.data.property);
 				setProperty(res.data.property);
@@ -15,7 +15,7 @@ export default function EditProperty(props) {
 				console.error(err)
 			});
 
-	},[props.match.params.propertyId]);
+	},[props.match.params.property_id]);
 	const onChange=(e)=>{
 		e.preventDefault();
 		//console.log(e.target.value);
@@ -33,7 +33,7 @@ export default function EditProperty(props) {
 	}
 	const deleteProperty=()=>{
 		axiosWithAuth()
-			.delete(`/properties/${props.match.params.propertyId}`)
+			.delete(`/properties/${props.match.params.property_id}`)
 			.then(res=>{
 				console.log(res.data);
 				props.history.push(`/dashboard`); 
@@ -54,11 +54,11 @@ export default function EditProperty(props) {
 		//console.log(sessionStorage);
 		//console.log(putProperty);
 		axiosWithAuth()
-			.put(`/properties/${props.match.params.propertyId}`, putProperty)
+			.put(`/properties/${props.match.params.property_id}`, putProperty)
 			.then(res => {
 				//console.log(res.data);
 				//setProperty(res.data.prop);
-				props.history.push(`/properties/${props.match.params.propertyId}`); 
+				props.history.push(`/properties/${props.match.params.property_id}`); 
 			}).catch(err => {
 				console.error(err);
 			});
