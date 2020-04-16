@@ -41,33 +41,33 @@ export default function Unit(props){
       });
   }, [props.match.params.unit_id]);
   return (
-    <div className="main-content m-5 row w-90" style={{fontSize:"2rem"}}>
-		<div class="col-lg-4">
-			<div class="mx-5 mb-5" style={{fontSize:"2rem"}}>
+    <div className="main-content m-5 row w-90"> 
+		<div className="col-lg-4">
+			<div className="mx-5 mb-5">
 				<img
 					src={property.img}
 					style={{maxWidth:"100%"}}
 					alt="Insert into Property Table to display"
 				/>
-				<div class="mx-5 mb-5" style={{fontSize:"1.7rem"}}>
+				<div className="mx-5 mb-5" style={{fontSize:"1.7rem"}}>
 					<p> Managed by{" "}
 						<Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
 					</p>
 				</div>
-				<div class="mx-5 mb-5" style={{fontSize:"1.3rem"}}>
+				<div className="mx-5 mb-5" style={{fontSize:"1.3rem"}}>
 					<p>{property.address}</p>
 					<p>{property.city}, {property.state} {property.zip}</p>
 					<p>{property.country}</p>
 				</div>
-				<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button class="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
+				<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
 			</div>
 		</div>
-		<div class="col-lg-8">
-			<div class="mx-5 mb-5 text-left">
+		<div className="col-lg-8">
+			<div className="mx-5 mb-5 text-left">
 				<p key={unit.id}>Unit {unit.number} </p>
 				<p key={unit.id+"Description"}>{unit.description}</p>
 				<hr/>
-				<h3 class="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Lease Info</h3>
+				<h3 className="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Lease Info</h3>
 				<p key={unit.id+"Availability"}> Available {Date(unit.date_available)}</p>
 				<p key={unit.id+"type"}>Structure {unit.type} </p>
 				<p key={unit.id+"lease_term"}>Lease Term {unit.lease_term} Months</p>
@@ -75,7 +75,7 @@ export default function Unit(props){
 				<p key={unit.id+"security_deposit"}>Security Deposit ${unit.security_deposit} </p>
 				<p key={unit.id+"fees"}>Fees {unit.fees} </p>
 				<hr/>
-				<h3 class="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Property Info</h3>
+				<h3 className="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Property Info</h3>
 				<p key={unit.id+"Parking"}>Parking {unit.parking} </p>
 				<p key={unit.id+"cooling"}>Cooling {unit.cooling} </p>
 				<p key={unit.id+"heating"}>Heating {unit.heating} </p>
@@ -83,15 +83,15 @@ export default function Unit(props){
 				<p key={unit.id+"laundry"}>Laundry {unit.laundry} </p>
 				<p key={unit.id+"sqft"}>SqFt. {unit.sqft} </p>
 				<hr/>
-				<h3 class="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Nearby School Info</h3>
+				<h3 className="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Nearby School Info</h3>
 				<p key={unit.id+"district"}>District {unit.district} </p>
 				<p key={unit.id+"elementary"}>Elementary {unit.elementary} </p>
 				<p key={unit.id+"middle"}>Middle {unit.middle} </p>
 				<p key={unit.id+"high"}>High {unit.high} </p>
 				<hr/>
 
-				<div class="text-center">
-					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button class="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
+				<div className="text-center">
+					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
 				</div>
 			</div>
 		</div>
