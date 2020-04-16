@@ -82,9 +82,9 @@ export default function Property(props){
         className='propertyImg'
       />      
     </div>
-    <div className='contentSection units'>
+    {/* <div className='contentSection units'>
       units will go here
-    </div>
+    </div> */}
 
     </div>
   );
