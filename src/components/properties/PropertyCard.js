@@ -25,7 +25,9 @@ export default function PropertyCard(props){
         <h3 style={{fontSize:"3rem"}}>{property.address}</h3>
         <p style={{fontSize:"2rem"}}>Managed by <Link to={`/manager/${property.manager_id}`}> {property.firstName+" "+property.lastName}</Link> </p>      
       </div>
-      <img src={property.img} className='propImg' alt="Insert into Property Table to display"/>
+      <div className='imgHolder'>
+        <img src={property.img} className='propImg' alt="Insert into Property Table to display"/>
+      </div>
     </div>  
   )
 }
