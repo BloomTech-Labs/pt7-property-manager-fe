@@ -41,6 +41,23 @@ export default function ApplicationForm(props){
         console.error(err);
       });
   }, [props.match.params.unit_id]);
+
+  //*********************FORM***********************/
+  const [apply, setApply]=useState({});
+  const handleChange = e => {
+    setApply({ ...apply, [e.target.name]: e.target.value });
+    };
+    const handleSubmit = e => {
+      e.preventDefault();
+      
+      axiosWithAuth()
+      .post("https://property-manager-be.herokuapp.com/auth/register", apply)
+        .then(res=>{ 
+          console.log(res.data); 
+          //console.log(res.data.token); 
+        })
+      document.getElementById('applyForm').reset();
+    }
   return (
     <div className="main-content">
       <p style={{fontSize:"2rem"}}>
@@ -59,16 +76,16 @@ export default function ApplicationForm(props){
 
     
 
-       <h1>Log in</h1>
-       <form id='logInForm' className='contactForm'autoComplete="new-password">
+       <h1>Application Form</h1>
+       <form id='applyForm' className='contactForm'autoComplete="new-password">
          
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='Adress'>Address</label>
            <input
-             type="email"
-             name="email"
-             value={"email"}
+             type="text"
+             name="address"
+             value={"address"}
              
-             className="email" required
+             className="address" required
            />
           
         
