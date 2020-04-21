@@ -43,7 +43,31 @@ export default function ApplicationForm(props){
   }, [props.match.params.unit_id]);
 
   //*********************FORM***********************/
-  const [apply, setApply]=useState({});
+  const [apply, setApply]=useState({
+    first_name:`${sessionStorage.getItem('firstName')}`,
+    last_name: `${sessionStorage.getItem('lastName')}`,
+    marital_status: "",
+    email: `${sessionStorage.getItem('email')}`,
+    move_in_date: "",
+    lease_terms: 12,
+    date_of_birth: "",
+    app_address: "",
+    app_city: "",
+    app_state: "",
+    app_zip: "",
+    app_country: "",
+    government_id: "",
+    social_security: "",
+    document: "", 
+    status: "pending",
+
+  });
+
+  console.log('Apply', apply);
+  
+  const[preValues, setPreValues]=useState(
+    localStorage.getItem('first_name') || ''
+  )
   const handleChange = e => {
     setApply({ ...apply, [e.target.name]: e.target.value });
     };
@@ -51,10 +75,11 @@ export default function ApplicationForm(props){
       e.preventDefault();
       
       axiosWithAuth()
-      .post("https://property-manager-be.herokuapp.com/auth/register", apply)
+      .post("https://property-manager-be.herokuapp.com/application", apply)
         .then(res=>{ 
-          console.log(res.data); 
-          //console.log(res.data.token); 
+          console.log(res.data.user); 
+         // console.log(res.data.token); 
+        
         })
       document.getElementById('applyForm').reset();
     }
@@ -79,14 +104,143 @@ export default function ApplicationForm(props){
        <h1>Application Form</h1>
        <form id='applyForm' className='contactForm'autoComplete="new-password">
          
-          <label htmlFor='Adress'>Address</label>
+          <label htmlFor='Adress'>First Name</label>
            <input
              type="text"
-             name="address"
-             value={"address"}
+             name="first_name"
+             value={apply.first_name}
              
-             className="address" required
+             className="First_Name" required
            />
+            <label htmlFor='Adress'>Last Name</label>
+            <input
+             type="text"
+             name="last_name"
+             value={apply.last_name}
+             
+             className="Last_name" required
+           />
+            <div className="search_categories">
+            <div className="select">
+            <select
+            type="checkbox"
+            name="marital_status"
+            value={apply.marital_status}
+            onChange={handleChange}
+            className="inputField_checkbox" required
+            >
+            <option value="">Please choose one option</option>
+            <option value="Renter">Single</option>
+            <option value="Manager">Married</option>
+            </select>
+            </div>
+            </div>
+            {/* move_in_date */}
+
+            {/* lease_terms: 12 */}
+            <div className="search_categories">
+            <div className="select">
+            <select
+            type="checkbox"
+            name="lease_terms"
+            value={apply.lease_terms}
+            onChange={handleChange}
+            className="inputField_checkbox" required
+            >
+            <option value="">Please choose one option</option>
+            <option value="Renter">6 months</option>
+            <option value="Manager">12 months</option>
+            </select>
+            </div>
+            </div>
+            {/* date_of_birth */}
+            {/* app_address */}
+            <label htmlFor='address'>Address</label>
+            <input
+            type="address"
+            name="app_address"
+            value={apply.app_address}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="app_address" required
+            />
+            {/*app_city */}
+            <label htmlFor='city'>City</label>
+            <input
+            type="address"
+            name="app_city"
+            value={apply.app_city}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="app_city" required
+            />
+            {/*app_state */}
+            <label htmlFor='state'>State</label>
+            <input
+            type="address"
+            name="app_state"
+            value={apply.app_state}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="app_state" required
+            />
+            {/* app_zip */}
+            <label htmlFor='zipcode'>zipcode</label>
+            <input
+            type="address"
+            name="app_zip"
+            value={apply.app_zip}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="app_zip" required
+            />
+            {/* app_country */}
+            <label htmlFor='country'>Country</label>
+            <input
+            type="address"
+            name="app_country"
+            value={apply.app_country}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="app_country" required
+            />
+            {/* government_id */}
+            <label htmlFor='goverment_id'>Goverment Id</label>
+            <input
+            type="password"
+            name="government_id"
+            value={apply.government_id}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="goverment_id" required
+            />
+            {/* social_security */}
+            <label htmlFor='social_security'>Social Security</label>
+            <input
+            type="password"
+            name="social_security"
+            value={apply.social_security}
+            onChange={handleChange}
+            // placeholder={"Example@domain.com"}
+            // onFocus={e => (e.target.placeholder = "")}
+            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
+            className="goverment_id" required
+            />
+            {/* document  */}
+
+            
           
         
            <div className='buttonHolder'>
