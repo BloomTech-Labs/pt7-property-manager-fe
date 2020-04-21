@@ -22,7 +22,7 @@ export default function PropertyCard(props){
   return(
     <div className='propertiesCard'>
       <div className='propertyInfo'>
-        <h3 style={{fontSize:"3rem"}}>{property.address}</h3>
+        <h3 style={{fontSize:"3rem"}} id='address'>{property.address}</h3>
         <p style={{fontSize:"2rem"}}>Managed by <Link to={`/manager/${property.manager_id}`}> {property.firstName+" "+property.lastName}</Link> </p>      
       </div>
       <div className='imgHolder'>
