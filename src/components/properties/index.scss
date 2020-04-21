@@ -11,7 +11,7 @@
   margin: 3em 0;
 
   .contentSection {
-    width: 33%;
+    width: 40%;
 
     .propertyImg {
       width: 100%;
@@ -23,6 +23,16 @@
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
+    justify-content: center;
+    
+    .propertyTitle {
+      font-size: 2.5em;
+      font-weight: 500;
+    }
+
+    .managedBy {
+      font-size: 2.3em;
+    }
   }
 }
 
