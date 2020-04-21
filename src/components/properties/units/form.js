@@ -55,7 +55,29 @@ export default function ApplicationForm(props){
 	  <div class="mb-5"> 
 		<p key={unit.id}>Unit {unit.number} - Available {Date(unit.date_available)}</p>
 	  </div>
-	  
-    </div>
+	  {/* FORM START HERE  */}
+
+    
+
+       <h1>Log in</h1>
+       <form id='logInForm' className='contactForm'autoComplete="new-password">
+         
+          <label htmlFor='email'>Email</label>
+           <input
+             type="email"
+             name="email"
+             value={"email"}
+             
+             className="email" required
+           />
+          
+        
+           <div className='buttonHolder'>
+          
+           <button className='submitBtn' type="submit" >Submit</button>
+         </div>
+       </form>
+     </div>
+ 
   );
 }
