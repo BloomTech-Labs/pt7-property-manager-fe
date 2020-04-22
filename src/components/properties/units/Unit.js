@@ -49,17 +49,17 @@ export default function Unit(props){
 					style={{maxWidth:"100%"}}
 					alt="Insert into Property Table to display"
 				/>
-				<div className="mx-5 mb-5" style={{fontSize:"1.7rem"}}>
+				<div className="mx-5 mb-5 info">
 					<p> Managed by{" "}
 						<Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
 					</p>
 				</div>
-				<div className="mx-5 mb-5" style={{fontSize:"1.3rem"}}>
+				<div className="mx-5 mb-5 info">
 					<p>{property.address}</p>
 					<p>{property.city}, {property.state} {property.zip}</p>
 					<p>{property.country}</p>
 				</div>
-				<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
+				<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"16px", padding:'18px 32px'}}>Apply Now</button></Link>
 			</div>
 		</div>
 		<div className="col-lg-8 information">
@@ -91,7 +91,7 @@ export default function Unit(props){
 				<hr/>
 
 				<div className="text-center">
-					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
+					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"16px", padding:'18px 32px'}}>Apply Now</button></Link>
 				</div>
 			</div>
 		</div>

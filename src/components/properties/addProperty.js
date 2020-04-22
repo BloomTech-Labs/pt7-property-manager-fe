@@ -29,7 +29,7 @@ export default function AddProperty(props) {
     }
   return (
     <div className="main-content">
-        <h2>Add Property</h2>
+        <h2 style={{fontSize:'4em'}}>Add Property</h2>
       <form className="addPropForm">
           <input type="text" required placeholder="Street Address" name="address" />
           <input type="text" required placeholder="City" name="city" />
