@@ -25,6 +25,7 @@ function DragAndCrop() {
       
     }).then(function (respose){
         console.log(respose);
+        sessionStorage.setItem('document', respose.data.url); 
     }).catch(function(error){
        console.log(error);
        
@@ -36,12 +37,12 @@ function DragAndCrop() {
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
-    <div className='drop-zone' {...getRootProps()} >
+    <div className='drop-zone' style={{cursor: 'pointer'}} {...getRootProps()} >
       <input {...getInputProps()} />
       {
         isDragActive ?
-          <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <p style={{fontSize:"2.5rem"}}>Drop the files here ...</p> :
+          <p style={{fontSize:"2.5rem"}}>Drag and drop your documents in here, or click to select files</p>
       }
     </div>
   )

@@ -1,7 +1,10 @@
 import React,{useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import './../index.scss';
+import ".././units/Forms.scss";
+
 import {axiosWithAuth} from "../../../utils/axiosWithAuth";
+import DropUp from "../../dropup/DropUp";
+import {Button} from "reactstrap";
 export default function ApplicationForm(props){
 	const [property, setProperty]=useState({});
 	const [unit, setUnit]=useState([]);
@@ -49,7 +52,7 @@ export default function ApplicationForm(props){
     marital_status: "",
     email: `${sessionStorage.getItem('email')}`,
     move_in_date: "",
-    lease_terms: 12,
+    lease_terms: "",
     date_of_birth: "",
     app_address: "",
     app_city: "",
@@ -58,18 +61,19 @@ export default function ApplicationForm(props){
     app_country: "",
     government_id: "",
     social_security: "",
-    document: "", 
+    document: `${sessionStorage.getItem('document')}`, 
     status: "pending",
 
   });
 
   console.log('Apply', apply);
   
-  const[preValues, setPreValues]=useState(
-    localStorage.getItem('first_name') || ''
-  )
+  const[preValues, setPreValues]=useState({
+    imageHash:Date.now()
+  })
   const handleChange = e => {
     setApply({ ...apply, [e.target.name]: e.target.value });
+
     };
     const handleSubmit = e => {
       e.preventDefault();
@@ -83,8 +87,16 @@ export default function ApplicationForm(props){
         })
       document.getElementById('applyForm').reset();
     }
+    const isLoggedIn = sessionStorage.getItem("token");
+  console.log('isLoggedIn', isLoggedIn);
+
+   const swapExt = apply.document.replace(/\.[^.]+$/, '.jpeg'); 
+   
+   
+   
+
   return (
-    <div className="main-content">
+    <div className="main-content-Form">
       <p style={{fontSize:"2rem"}}>
 		{property.address}
       </p>
@@ -101,58 +113,63 @@ export default function ApplicationForm(props){
 
     
 
-       <h1>Application Form</h1>
-       <form id='applyForm' className='contactForm'autoComplete="new-password">
+       <h2>Application Form</h2>
+       <form className="addPropForms" autoComplete="new-password">
          
           <label htmlFor='Adress'>First Name</label>
            <input
              type="text"
              name="first_name"
              value={apply.first_name}
-             
-             className="First_Name" required
+             style={{marginBottom:"20px"}}
+             required
            />
             <label htmlFor='Adress'>Last Name</label>
             <input
              type="text"
              name="last_name"
              value={apply.last_name}
-             
-             className="Last_name" required
+             style={{marginBottom:"20px"}}
+             required
            />
-            <div className="search_categories">
-            <div className="select">
+           
+            <label style={{marginBottom:"20px"}} htmlFor='marital_status'>Marital Status</label>
+            <div style={{background: "transparent", marginBottom:"20px", fontSize:"2.5rem", height:"65px", lineHeight:"1", width:"20%" }}>
+               
             <select
             type="checkbox"
             name="marital_status"
             value={apply.marital_status}
             onChange={handleChange}
-            className="inputField_checkbox" required
+             required
+             style={{marginBottom:"20px"}}
             >
             <option value="">Please choose one option</option>
-            <option value="Renter">Single</option>
-            <option value="Manager">Married</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
             </select>
             </div>
-            </div>
+           
             {/* move_in_date */}
 
             {/* lease_terms: 12 */}
-            <div className="search_categories">
-            <div className="select">
-            <select
+            
+            <label  style={{marginBottom:"20px"}}htmlFor='marital_status'>Lease Term</label>
+            <div style={{background: "transparent", marginBottom:"20px", fontSize:"2.5rem", height:"65px", lineHeight:"1", width:"20%" }}>
+            <select 
             type="checkbox"
             name="lease_terms"
             value={apply.lease_terms}
             onChange={handleChange}
-            className="inputField_checkbox" required
+             required
+             style={{marginBottom:"20px"}}
             >
             <option value="">Please choose one option</option>
-            <option value="Renter">6 months</option>
-            <option value="Manager">12 months</option>
+            <option value="6">6 Months</option>
+            <option value="12">12 Months</option>
             </select>
             </div>
-            </div>
+           
             {/* date_of_birth */}
             {/* app_address */}
             <label htmlFor='address'>Address</label>
@@ -164,7 +181,8 @@ export default function ApplicationForm(props){
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="app_address" required
+            required
+            style={{marginBottom:"20px"}}
             />
             {/*app_city */}
             <label htmlFor='city'>City</label>
@@ -176,7 +194,8 @@ export default function ApplicationForm(props){
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="app_city" required
+             required
+             style={{marginBottom:"20px"}}
             />
             {/*app_state */}
             <label htmlFor='state'>State</label>
@@ -188,7 +207,8 @@ export default function ApplicationForm(props){
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="app_state" required
+             required
+             style={{marginBottom:"20px"}}
             />
             {/* app_zip */}
             <label htmlFor='zipcode'>zipcode</label>
@@ -200,7 +220,8 @@ export default function ApplicationForm(props){
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="app_zip" required
+             required
+             style={{marginBottom:"20px"}}
             />
             {/* app_country */}
             <label htmlFor='country'>Country</label>
@@ -212,7 +233,8 @@ export default function ApplicationForm(props){
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="app_country" required
+             required
+             style={{marginBottom:"20px"}}
             />
             {/* government_id */}
             <label htmlFor='goverment_id'>Goverment Id</label>
@@ -224,7 +246,8 @@ export default function ApplicationForm(props){
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="goverment_id" required
+            required
+            style={{marginBottom:"20px"}}
             />
             {/* social_security */}
             <label htmlFor='social_security'>Social Security</label>
@@ -233,20 +256,26 @@ export default function ApplicationForm(props){
             name="social_security"
             value={apply.social_security}
             onChange={handleChange}
+            
             // placeholder={"Example@domain.com"}
             // onFocus={e => (e.target.placeholder = "")}
             // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-            className="goverment_id" required
+           required
+          //  style={{marginBottom:"20px"}}
             />
             {/* document  */}
-
+            <div style={{marginBottom:"20px"}}>
+            <DropUp />
+            </div>
+            <div>
+            <img src={swapExt} alt="" style={{width:"250px"}}/>
+            </div>
+              <button onClick={() =>sessionStorage.setItem('document', "")} >Delete</button>
+          
             
           
-        
-           <div className='buttonHolder'>
-          
-           <button className='submitBtn' type="submit" >Submit</button>
-         </div>
+           <Button color="success" type="submit" >Submit</Button>
+      
        </form>
      </div>
  
