@@ -20,11 +20,11 @@ export default function EditUnit(props) {
 	let postUnit=(e)=>{
         e.preventDefault();
         //console.log(e.target.parentNode.childNodes);
-        let number=e.target.parentNode.childNodes[0].value;
-        let dateAvailable=e.target.parentNode.childNodes[1].value;
-        let homeType=e.target.parentNode.childNodes[2].value;
-        let fees=e.target.parentNode.childNodes[3].value;
-        let sqft=e.target.parentNode.childNodes[4].value;
+        let number=e.target.parentNode.childNodes[1].value;
+        let dateAvailable=e.target.parentNode.childNodes[3].value;
+        let homeType=e.target.parentNode.childNodes[5].childNodes[0].value;
+        let fees=e.target.parentNode.childNodes[7].value;
+        let sqft=e.target.parentNode.childNodes[9].value;
         let postUnit={number:number, date_available:dateAvailable, type:homeType, fees:fees, sqft:sqft, property_id:props.match.params.property_id};
 		//axios
 		axiosWithAuth()
