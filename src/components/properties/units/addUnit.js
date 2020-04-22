@@ -12,7 +12,7 @@ export default function AddUnit(props) {
         let homeType=e.target.parentNode.childNodes[5].childNodes[0].value;
         let fees=e.target.parentNode.childNodes[7].value;
         let sqft=e.target.parentNode.childNodes[9].value;
-        let postUnit={number:number, date_available:dateAvailable, type:homeType, fees:fees, sqft:sqft, property_id:props.match.params.property_id};
+        let postUnit={number:number, date_available:dateAvailable, type:homeType, fees:fees, sqft:sqft, property_id:props.match.params.property_id, manager_id:sessionStorage.getItem('userID')};
 		console.log(postUnit);
 		//axios
 		axiosWithAuth()
