@@ -63,6 +63,7 @@ export default function ApplicationForm(props){
     social_security: "",
     document: `${sessionStorage.getItem('document')}`, 
     status: "pending",
+    unit_id: `${props.match.params.property_id}`
 
   });
 
@@ -79,13 +80,15 @@ export default function ApplicationForm(props){
       e.preventDefault();
       
       axiosWithAuth()
-      .post("https://property-manager-be.herokuapp.com/application", apply)
+      .post("/applications", apply)
         .then(res=>{ 
-          console.log(res.data.user); 
+          console.log(res); 
          // console.log(res.data.token); 
         
-        })
-      document.getElementById('applyForm').reset();
+        }).catch(err => {
+          console.error(err);
+  });
+      // document.getElementById('applyForm').reset();
     }
     const isLoggedIn = sessionStorage.getItem("token");
   console.log('isLoggedIn', isLoggedIn);
@@ -116,20 +119,31 @@ export default function ApplicationForm(props){
        <h2>Application Form</h2>
        <form className="addPropForms" autoComplete="new-password">
          
-          <label htmlFor='Adress'>First Name</label>
+          <label htmlFor='FirstName'>First Name</label>
            <input
              type="text"
              name="first_name"
              value={apply.first_name}
              style={{marginBottom:"20px"}}
+             onChange={handleChange}
              required
            />
-            <label htmlFor='Adress'>Last Name</label>
+            <label htmlFor='LastName'>Last Name</label>
             <input
              type="text"
              name="last_name"
              value={apply.last_name}
              style={{marginBottom:"20px"}}
+             onChange={handleChange}
+             required
+           />
+            <label htmlFor='email'>Email</label>
+            <input
+             type="email"
+             name="email"
+             value={apply.email}
+             style={{marginBottom:"20px"}}
+             onChange={handleChange}
              required
            />
            
@@ -140,9 +154,9 @@ export default function ApplicationForm(props){
             type="checkbox"
             name="marital_status"
             value={apply.marital_status}
+            style={{marginBottom:"20px"}}
             onChange={handleChange}
-             required
-             style={{marginBottom:"20px"}}
+            required
             >
             <option value="">Please choose one option</option>
             <option value="single">Single</option>
@@ -151,10 +165,19 @@ export default function ApplicationForm(props){
             </div>
            
             {/* move_in_date */}
-
+            <label>Move in Date</label>
+          <input 
+          type="date"
+          name="move_in_date"
+          value={apply.move_in_date} 
+          style={{marginBottom:"20px"}} 
+          onChange={handleChange}
+          required 
+           />
             {/* lease_terms: 12 */}
             
-            <label  style={{marginBottom:"20px"}}htmlFor='marital_status'>Lease Term</label>
+            <label  style={{marginBottom:"20px"}} 
+            htmlFor='leas_term'>Lease Term</label>
             <div style={{background: "transparent", marginBottom:"20px", fontSize:"2.5rem", height:"65px", lineHeight:"1", width:"20%" }}>
             <select 
             type="checkbox"
@@ -169,8 +192,17 @@ export default function ApplicationForm(props){
             <option value="12">12 Months</option>
             </select>
             </div>
-           
+            
             {/* date_of_birth */}
+            <label>Date of Birth</label>
+          <input 
+          type="date"
+          name="date_of_birth" 
+          value={apply.date_of_birth} 
+          onChange={handleChange}
+          style={{marginBottom:"20px"}} 
+          required 
+           />
             {/* app_address */}
             <label htmlFor='address'>Address</label>
             <input
@@ -274,7 +306,7 @@ export default function ApplicationForm(props){
           
             
           
-           <Button color="success" type="submit" >Submit</Button>
+           <Button color="success" type="submit"onClick={handleSubmit} >Submit</Button>
       
        </form>
      </div>
