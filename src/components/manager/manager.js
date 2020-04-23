@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import PropertyCard from "./PropertyCard.js";
 import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
 import "./index.scss";
@@ -30,8 +29,10 @@ function Manager(props){
       <h3 className='managedBy'>Properties Managed by {manager.firstName+' '+manager.lastName}:</h3>
           {properties.map(property=>(
             <div key={property.id}>
-              <PropertyCard property={property}/>
-				<Button color="success"><Link to={`/properties/${property.id}`}>View Details</Link></Button>
+				<h4 style={{fontSize:"2.5rem"}}>{property.address} in {property.city+", "+property.state}</h4>
+				<img src={property.img} style={{width:"50%"}} alt="Insert location into Property Table to display"/>
+				<br/>
+				<Button className="my-4" color="success"><Link to={`/properties/${property.id}`}>View Details</Link></Button>
 				<hr/>
             </div>
           ))}
