@@ -16,6 +16,7 @@ $main: #308C47;
             color: $main;
             margin-bottom: 0;
         }
+
         input {
             font-size: 2.6em;
             padding: 5px;
@@ -27,17 +28,20 @@ $main: #308C47;
             ::placeholder {
                 color: black;
             }
+
             &:focus {
                 box-shadow: 0 6px 6px -6px black;
             }
         }
-       
+
         .buttonHolder {
             width: 100%;
             display: flex;
             justify-content: flex-end;
         }
-        .cancelBtn, .submitBtn {
+
+        .cancelBtn,
+        .submitBtn {
             padding: 0.5em 1em;
             border: none;
             font-size: 2em;
@@ -48,6 +52,7 @@ $main: #308C47;
             &:active {
                 transform: translateY(5px);
             }
+
             &:hover {
                 box-shadow: 0 6px 6px -6px black;
             }
@@ -66,9 +71,10 @@ $main: #308C47;
         }
     }
 }
+
 //***************************************************
 
-.search_categories{
+.search_categories {
     font-size: 13px;
     padding: 10px 8px 10px 14px;
     background: #fff;
@@ -76,15 +82,15 @@ $main: #308C47;
     border-radius: 6px;
     overflow: hidden;
     position: relative;
-  }
-  
-  .search_categories .select{
+}
+
+.search_categories .select {
     width: 120%;
     // background:url('arrow.png') no-repeat;
-    background-position:80% center;
-  }
-  
-  .search_categories .select select{
+    background-position: 80% center;
+}
+
+.search_categories .select select {
     background: transparent;
     line-height: 1;
     border: 0;
@@ -94,8 +100,8 @@ $main: #308C47;
     position: relative;
     z-index: 10;
     font-size: 2.2em;
-    color:gray;
-  }
+    color: gray;
+}
 
 //*******************************************************
 
@@ -105,5 +111,22 @@ $main: #308C47;
             width: 80%;
         }
     }
+}
 
+@media (max-width: 600px) {
+    .contactFormHolder {
+        h1 {
+            font-size: 3em;
+            margin: 32px auto;
+        }
+        .contactForm input {
+            font-size: 1.8em !important;
+        }
+    }
+
+    .search_categories {
+        .select select {
+            font-size: 1.5em;
+        }
+    }
 }

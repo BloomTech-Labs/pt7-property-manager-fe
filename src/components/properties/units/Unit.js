@@ -52,27 +52,27 @@ export default function Unit(props){
 					style={{maxWidth:"100%"}}
 					alt="Insert into Property Table to display"
 				/>
-				<div className="mx-5 mb-5" style={{fontSize:"1.7rem"}}>
-					<p> Managed by{" "}
-						<Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
-					</p>
-				</div>
 				<div className="mx-5 mb-5" style={{fontSize:"1.3rem"}}>
 					<p>{property.address}</p>
 					<p>{property.city}, {property.state} {property.zip}</p>
 					<p>{property.country}</p>
 				</div>
-				{isLoggedIn ? <Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link> : <Redirect to="/Login" />}
-				{/* <Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link> */}
+				<div className="mx-5 mb-5" style={{fontSize:"1rem"}}>
+					<p> Managed by{" "}
+						<Link to={`/manager/${property.manager_id}`}> {manager.firstName+" "+manager.lastName}</Link>{" "}
+					</p>
+				</div>
+
+				<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
 			</div>
 		</div>
-		<div className="col-lg-8">
+		<div className="col-lg-8 information">
 			<div className="mx-5 mb-5 text-left">
 				<p key={unit.id}>Unit {unit.number} </p>
 				<p key={unit.id+"Description"}>{unit.description}</p>
 				<hr/>
 				<h3 className="text-center" style={{fontSize:"2rem", fontWeight:"bold"}}>Lease Info</h3>
-				<p key={unit.id+"Availability"}> Available {Date(unit.date_available)}</p>
+				<p key={unit.id+"Availability"}>Available {(unit.date_available) ? unit.date_available.substring(5,7)+"-"+unit.date_available.substring(8,10)+"-"+unit.date_available.substring(0,4): "" }</p>
 				<p key={unit.id+"type"}>Structure {unit.type} </p>
 				<p key={unit.id+"lease_term"}>Lease Term {unit.lease_term} Months</p>
 				<p key={unit.id+"monthly_rent"}>Rent ${unit.monthly_rent} </p>

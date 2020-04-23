@@ -1,14 +1,13 @@
 import React,{useState, useEffect} from "react";
-import {Link} from "react-router-dom";
 import ".././units/Forms.scss";
-
 import {axiosWithAuth} from "../../../utils/axiosWithAuth";
 import DropUp from "../../dropup/DropUp";
 import {Button} from "reactstrap";
 export default function ApplicationForm(props){
 	const [property, setProperty]=useState({});
 	const [unit, setUnit]=useState([]);
-	const [manager, setManager]=useState({});
+  // const [manager, setManager]=useState({});
+  
   useEffect(() => {
     axiosWithAuth()
       .get(`/properties/${props.match.params.property_id}`)
@@ -22,7 +21,7 @@ export default function ApplicationForm(props){
               )
               .then(res => {
                 console.log(res.data.user);
-			    setManager(res.data.user);
+			    // setManager(res.data.user);
               })
               .catch(err => {
                 console.error(err);
@@ -43,7 +42,7 @@ export default function ApplicationForm(props){
       .catch(err => {
         console.error(err);
       });
-  }, [props.match.params.unit_id]);
+  }, [props.match.params.unit_id, props.match.params.property_id]);
 
   //*********************FORM***********************/
   const [apply, setApply]=useState({
@@ -66,12 +65,33 @@ export default function ApplicationForm(props){
     unit_id: `${props.match.params.property_id}`
 
   });
-
-  console.log('Apply', apply);
+  const initialValues = {
+    first_name:"",
+    last_name: "",
+    marital_status: "",
+    email: "",
+    move_in_date: "",
+    lease_terms: "",
+    date_of_birth: "",
+    app_address: "",
+    app_city: "",
+    app_state: "",
+    app_zip: "",
+    app_country: "",
+    government_id: "",
+    social_security: "",
+    document: "", 
+    status: "pending",
+    unit_id: `${props.match.params.property_id}`
+  }
   
-  const[preValues, setPreValues]=useState({
-    imageHash:Date.now()
-  })
+  
+  useEffect((e) => {
+   if(apply.first_name === "null"){
+setApply(initialValues)
+   }
+  },[apply.first_name, initialValues]);
+
   const handleChange = e => {
     setApply({ ...apply, [e.target.name]: e.target.value });
 
@@ -83,21 +103,12 @@ export default function ApplicationForm(props){
       .post("/applications", apply)
         .then(res=>{ 
           console.log(res); 
-         // console.log(res.data.token); 
         
         }).catch(err => {
           console.error(err);
   });
       // document.getElementById('applyForm').reset();
     }
-    const isLoggedIn = sessionStorage.getItem("token");
-  console.log('isLoggedIn', isLoggedIn);
-
-   const swapExt = apply.document.replace(/\.[^.]+$/, '.jpeg'); 
-   
-   
-   
-
   return (
     <div className="main-content-Form">
       <p style={{fontSize:"2rem"}}>
@@ -109,17 +120,14 @@ export default function ApplicationForm(props){
       <p style={{fontSize:"2rem"}}>
 		{property.country}
       </p>
-	  <div class="mb-5"> 
+	  <div className="mb-5"> 
 		<p key={unit.id}>Unit {unit.number} - Available {Date(unit.date_available)}</p>
+    
 	  </div>
 	  {/* FORM START HERE  */}
-
-    
-
        <h2>Application Form</h2>
        <form className="addPropForms" autoComplete="new-password">
-         
-          <label htmlFor='FirstName'>First Name</label>
+         <label htmlFor='FirstName'>First Name</label>
            <input
              type="text"
              name="first_name"
@@ -210,9 +218,6 @@ export default function ApplicationForm(props){
             name="app_address"
             value={apply.app_address}
             onChange={handleChange}
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
             required
             style={{marginBottom:"20px"}}
             />
@@ -223,9 +228,6 @@ export default function ApplicationForm(props){
             name="app_city"
             value={apply.app_city}
             onChange={handleChange}
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
              required
              style={{marginBottom:"20px"}}
             />
@@ -236,9 +238,6 @@ export default function ApplicationForm(props){
             name="app_state"
             value={apply.app_state}
             onChange={handleChange}
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
              required
              style={{marginBottom:"20px"}}
             />
@@ -249,9 +248,6 @@ export default function ApplicationForm(props){
             name="app_zip"
             value={apply.app_zip}
             onChange={handleChange}
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
              required
              style={{marginBottom:"20px"}}
             />
@@ -262,9 +258,6 @@ export default function ApplicationForm(props){
             name="app_country"
             value={apply.app_country}
             onChange={handleChange}
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
              required
              style={{marginBottom:"20px"}}
             />
@@ -275,9 +268,6 @@ export default function ApplicationForm(props){
             name="government_id"
             value={apply.government_id}
             onChange={handleChange}
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
             required
             style={{marginBottom:"20px"}}
             />
@@ -288,25 +278,14 @@ export default function ApplicationForm(props){
             name="social_security"
             value={apply.social_security}
             onChange={handleChange}
-            
-            // placeholder={"Example@domain.com"}
-            // onFocus={e => (e.target.placeholder = "")}
-            // onBlur={e => (e.target.placeholder = "Example@domain.com")}
-           required
+            required
           //  style={{marginBottom:"20px"}}
             />
             {/* document  */}
             <div style={{marginBottom:"20px"}}>
-            <DropUp />
+            <DropUp/>
             </div>
-            <div>
-            <img src={swapExt} alt="" style={{width:"250px"}}/>
-            </div>
-              <button onClick={() =>sessionStorage.setItem('document', "")} >Delete</button>
-          
-            
-          
-           <Button color="success" type="submit"onClick={handleSubmit} >Submit</Button>
+            <Button color="success" type="submit"onClick={handleSubmit} >Submit</Button>
       
        </form>
      </div>
