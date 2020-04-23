@@ -8,6 +8,11 @@
     font-size: 2.5em;
     margin: 0.5em;
   }
+
+  .row {
+    margin: 0;
+    justify-content: center;
+  }
 }
 
 .propertyCard {
@@ -69,12 +74,14 @@ p a {
   font-family: "Montserrat", sans-serif;
   display: flex;
   box-sizing: border-box;
+  min-height: 80%;
+  flex-direction: column;
+  align-items: center;
 
   .propertyInfo {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 30%;
   }
 
   .imgHolder {
