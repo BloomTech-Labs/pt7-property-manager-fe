@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {axiosWithAuth} from '../../../utils/axiosWithAuth.js';
 import "./../addProperty.scss";
 import {Button} from "reactstrap";
+import {Link} from 'react-router-dom';
 export default function EditUnit(props) {
 	const [unit, setUnit]=useState({});
 	useEffect(()=>{
@@ -31,7 +32,7 @@ export default function EditUnit(props) {
 			.put(`/units/${props.match.params.unit_id}`, postUnit)
 			.then(res => {
 				console.log(res.data);
-				//props.history.push(`/properties/${res.data.prop.id}`); 
+				props.history.push(`/dashboard/`); 
 			})
 			.catch(err => {
 				console.error(err);
@@ -62,6 +63,7 @@ export default function EditUnit(props) {
 		  <label>Square Footage</label>
           <input type="number" style={{marginBottom:"20px"}} min="0" value={unit.sqft} name="sqft" />
           <Button color="success" type="submit" onClick={(e)=>postUnit(e)}>Save Changes</Button>
+		  <Link className="mx-0" style={{width:"20%"}} to="/dashboard"><Button className="m-0 w-100" color="secondary" type="reset">Cancel</Button></Link>
       </form>
     </div>
   );
