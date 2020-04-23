@@ -2,6 +2,7 @@ import React from 'react';
 import {axiosWithAuth} from '../../utils/axiosWithAuth.js';
 import "./addProperty.scss";
 import {Button} from "reactstrap";
+import {Link} from "react-router-dom";
 export default function AddProperty(props) {
 
 	let postProperty=(e)=>{
@@ -37,6 +38,7 @@ export default function AddProperty(props) {
           <input type="text" required placeholder="ZipCode" name="zip" />
           <input type="text" placeholder="Image Link" name="img" />
           <Button color="success" type="submit" onClick={(e)=>postProperty(e)}>Add Property</Button>
+		  <Link className="mx-0" style={{width:"20%"}} to="/dashboard"><Button className="m-0 w-100" color="secondary" type="reset">Cancel</Button></Link>
       </form>
     </div>
   );

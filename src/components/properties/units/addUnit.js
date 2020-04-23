@@ -2,6 +2,7 @@ import React from 'react';
 import {axiosWithAuth} from '../../../utils/axiosWithAuth.js';
 import "./../addProperty.scss";
 import {Button} from "reactstrap";
+import {Link} from 'react-router-dom';
 export default function AddUnit(props) {
 
 	let postUnit=(e)=>{
@@ -12,17 +13,16 @@ export default function AddUnit(props) {
         let homeType=e.target.parentNode.childNodes[5].childNodes[0].value;
         let fees=e.target.parentNode.childNodes[7].value;
         let sqft=e.target.parentNode.childNodes[9].value;
-        let postUnit={number:number, date_available:dateAvailable, type:homeType, fees:fees, sqft:sqft, property_id:props.match.params.property_id};
+        let postUnit={number:number, date_available:dateAvailable, type:homeType, fees:fees, sqft:sqft, property_id:props.match.params.property_id, manager_id:sessionStorage.getItem('userID')};
 		console.log(postUnit);
 		//axios
 		axiosWithAuth()
 			.post(`/units`, postUnit)
           .then(res => {
-			console.log(res.data);
-			//props.history.push(`/properties/${res.data.prop.id}`); 
+			//console.log(res.data);
+			props.history.push(`/dashboard/`); 
           }).catch(err => {
               console.error(err);
-        // { property_id:2, name: "Slums", manager_id: 2 }]);
       });
     }
   return (
@@ -49,6 +49,7 @@ export default function AddUnit(props) {
 		  <label>Square Footage</label>
           <input type="number" style={{marginBottom:"20px"}} min="0" name="sqft" />
           <Button color="success" type="submit" onClick={(e)=>postUnit(e)}>Add Unit</Button>
+		  <Link className="mx-0" style={{width:"20%"}} to="/dashboard"><Button className="m-0 w-100" color="secondary" type="reset">Cancel</Button></Link>
       </form>
     </div>
   );
