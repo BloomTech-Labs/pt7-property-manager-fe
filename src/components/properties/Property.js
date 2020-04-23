@@ -30,7 +30,7 @@ export default function Property(props){
 				  `/properties/${props.match.params.property_id}/units`
               )
               .then(res => {
-				//console.log(res.data.units);
+				// console.log(res.data.units);
 				setUnits(res.data.units);
               })
               .catch(err => {
@@ -58,6 +58,7 @@ export default function Property(props){
 		  />      
 		</div>
 		<div className='col-6 contentSection units'>
+			<h1 style={{fontSize:'4em', color:'#308c47'}}>Units</h1>
 			{[...units].map(unit=>{
 				if(unit.property_id == property.id){
 					return(
