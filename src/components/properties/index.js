@@ -23,9 +23,9 @@ export default function Properties() {
   return (
     <div className="main-content">
       <h2 style={{margin: '30px'}}>Properties</h2>
-      <div>
+      <div className="row">
         {[...properties].map(property => (
-          <div key={property.id} className="PropertyCard">
+          <div key={property.id} className="col-lg-5 PropertyCard">
             <PropertyCard property={property} />
             <Link to={`/Properties/${property.id}`}>
               <Button color="success" className='viewProp' style={{fontSize:"16px", marginTop:'0.5em', padding:'18px 32px'}} size="lg">
