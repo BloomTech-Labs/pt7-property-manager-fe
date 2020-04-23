@@ -62,7 +62,7 @@ export default function Unit(props){
 				<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
 			</div>
 		</div>
-		<div className="col-lg-8">
+		<div className="col-lg-8 information">
 			<div className="mx-5 mb-5 text-left">
 				<p key={unit.id}>Unit {unit.number} </p>
 				<p key={unit.id+"Description"}>{unit.description}</p>

@@ -1,13 +1,47 @@
-.addPropForm{
-	display:flex;
-	flex-direction:column;
-	height:50vh;
-	align-items:center;
-	padding-top:40px;
+.addPropForm {
+	display: flex;
+	flex-direction: column;
+	height: 50vh;
+	align-items: center;
+	padding-top: 40px;
 	justify-content: flex-start;
-	.btn, input{
-		margin:10px;
-		width:20%;
-		font-size:2rem;
+
+	.btn,
+	input {
+		margin: 10px;
+		width: 20%;
+		font-size: 2rem;
+	}
+
+	.btn {
+		padding: 18px 32px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.addPropForm {
+		.btn, input {
+			width: 40%;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.addPropForm {
+
+		.btn,
+		input {
+			width: 55%;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.addPropForm {
+
+		.btn,
+		input {
+			width: 70%;
+		}
 	}
 }
