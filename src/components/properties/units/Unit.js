@@ -29,7 +29,7 @@ export default function Unit(props){
 				  `/units/${props.match.params.unit_id}`
 			   )
               .then(res => {
-                console.log(res.data.unit);
+                //console.log(res.data.unit);
 				setUnit(res.data.unit);
               })
               .catch(err => {
@@ -41,7 +41,7 @@ export default function Unit(props){
       });
   }, [props.match.params.unit_id]);
   const isLoggedIn = sessionStorage.getItem("token")
-  console.log('isLoggedIn', isLoggedIn);
+  //console.log('isLoggedIn', isLoggedIn);
   
   return (
     <div className="main-content m-5 row w-90"> 
