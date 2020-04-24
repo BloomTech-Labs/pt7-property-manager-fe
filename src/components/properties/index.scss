@@ -89,9 +89,11 @@ p a {
 
     .propImg {
       padding: 1em;
-      max-width: 100%;
       height: auto;
-      max-height: 750px;
+      max-height: 350px;
+      min-height: 350px;
+      min-width: 350px;
+      max-width: 350px;
     }
 
   }
