@@ -32,13 +32,17 @@ test('renders Dropdown Default', () => {
   const { getByText } = render(<SignUp />);
   getByText(/Please choose one option/i);
 });
+test('renders Label of Dropdown', () => {
+  const { getByText } = render(<SignUp />);
+  getByText(/Renter or a Manager/i);
+});
 test('renders Renter option of Dropdown', () => {
   const { getByText } = render(<SignUp />);
-  getByText(/Renter/i);
+  getByText(/^Renter$/i);
 });
 test('renders Manager option of Dropdown', () => {
   const { getByText } = render(<SignUp />);
-  getByText(/Manager/i);
+  getByText(/^Manager$/i);
 });
 
 test('renders Submit Button', () => {
