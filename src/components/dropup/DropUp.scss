@@ -1,0 +1,18 @@
+.drop-zone{
+    /* border: 1px solid salmon;
+    width: 400px;
+    height: 400px;
+    margin-top: 110px;
+ */
+    margin-top: 110px;
+    height: 400px;
+    width: 400px;
+    background-color: #fff;
+    border: 2px dashed #308C47;  /*rgb(187, 186, 186); */
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 16px;
+}

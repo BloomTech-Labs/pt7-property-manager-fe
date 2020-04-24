@@ -48,6 +48,7 @@ export default function AddUnit(props) {
           <input type="number" style={{marginBottom:"20px"}} step="0.01" min="0" required name="fees" />
 		  <label>Square Footage</label>
           <input type="number" style={{marginBottom:"20px"}} min="0" name="sqft" />
+
           <Button color="success" type="submit" onClick={(e)=>postUnit(e)}>Add Unit</Button>
 		  <Link className="mx-0" style={{width:"20%"}} to="/dashboard"><Button className="m-0 w-100" color="secondary" type="reset">Cancel</Button></Link>
       </form>

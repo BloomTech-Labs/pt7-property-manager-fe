@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import './../index.scss';
 import {axiosWithAuth} from "../../../utils/axiosWithAuth";
 export default function Unit(props){
@@ -40,6 +40,9 @@ export default function Unit(props){
         console.error(err);
       });
   }, [props.match.params.unit_id]);
+  const isLoggedIn = sessionStorage.getItem("token")
+  console.log('isLoggedIn', isLoggedIn);
+  
   return (
     <div className="main-content m-5 row w-90"> 
 		<div className="col-lg-4">
@@ -92,7 +95,8 @@ export default function Unit(props){
 				<hr/>
 
 				<div className="text-center">
-					<Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link>
+					{isLoggedIn ? <Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link> : <Redirect to="/Login" />}
+					{/* <Link to={`/Properties/${props.match.params.property_id}/Unit/${unit.id}/Apply`}><button className="btn-success btn btn-lg" style={{fontSize:"2rem"}}>Apply Now</button></Link> */}
 				</div>
 			</div>
 		</div>

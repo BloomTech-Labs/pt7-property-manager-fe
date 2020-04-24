@@ -102,6 +102,7 @@ const SignUp = (props) => {
 		onBlur={e => (e.target.placeholder = "Phone Number")}
 		className="tel"
 		/>
+		<label style={{marginBottom:"20px"}} htmlFor='marital_status'>Are you a Renter or a Manager?</label>
 		<div className="search_categories">
 		<div className="select">
 		<select
