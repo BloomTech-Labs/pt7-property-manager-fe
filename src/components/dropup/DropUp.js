@@ -1,6 +1,7 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {useDropzone} from 'react-dropzone';
 import Spinner from "./Spinner";
+import pulse from "./upload-icon.svg"
 import axios from 'axios';
 import './DropUp.scss';
 
@@ -40,12 +41,13 @@ function DragAndCrop() {
   }, [])
   
   const {acceptedFiles, getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-
-  const files = acceptedFiles.map(file => (
+ 
   
+  const files = acceptedFiles.map(file => (
+    
     <li key={file.path}>
       {file.path} - {file.size} bytes
-      <button style={{background:"none", border:"none", color:"red"}}>x</button>
+      <button  style={{background:"none", border:"none", color:"red"}}>x</button>
       </li>
     ));
    
@@ -55,14 +57,14 @@ function DragAndCrop() {
       <input {...getInputProps()} />
       {
         isDragActive ?
-        <Spinner/>:
-          <p style={{fontSize:"2.5rem"}}>Drag and drop your documents in here, or click to select files</p>
+       <img src={pulse} className="pulse" alt="" />:
+       <p style={{fontSize:"2.5rem"}}>Drag and drop your documents in here, or click to select files</p>
       }
        </div>
      <aside>
      <h4 style={{fontSize:"2.5rem"}}>Files</h4>
      <ul style={{fontSize:"2.5rem"}}>{files}</ul>
-   </aside>
+     </aside>
    </section>
     )
 }

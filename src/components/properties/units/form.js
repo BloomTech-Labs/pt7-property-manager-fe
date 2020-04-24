@@ -84,14 +84,16 @@ export default function ApplicationForm(props){
     status: "pending",
     unit_id: `${props.match.params.property_id}`
   }
-  
-  
+  const [confirm, setConfirm]=useState({
+    confirmed:false
+  })
+   console.log("confirm", confirm.confirmed)
   useEffect((e) => {
    if(apply.first_name === "null"){
 setApply(initialValues)
    }
   },[apply.first_name, initialValues]);
-
+ 
   const handleChange = e => {
     setApply({ ...apply, [e.target.name]: e.target.value });
 
@@ -103,12 +105,17 @@ setApply(initialValues)
       .post("/applications", apply)
         .then(res=>{ 
           console.log(res); 
-        
+          console.log("status", res.status)
+          if(res.status === 200){
+            setConfirm({confirmed:true})
+          }
         }).catch(err => {
           console.error(err);
   });
       // document.getElementById('applyForm').reset();
     }
+  
+    
   return (
     <div className="main-content-Form">
       <p style={{fontSize:"2rem"}}>
@@ -285,6 +292,7 @@ setApply(initialValues)
             <div style={{marginBottom:"20px"}}>
             <DropUp/>
             </div>
+           
             <Button color="success" type="submit"onClick={handleSubmit} >Submit</Button>
       
        </form>
