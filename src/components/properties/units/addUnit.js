@@ -34,8 +34,7 @@ export default function AddUnit(props) {
 		  <label>Availability Date</label>
           <input type="date" style={{marginBottom:"20px"}} required name="date_available" />
 		  <label>Unit Type</label>
-		  <div style={{background: "transparent", marginBottom:"20px", fontSize:"2.5rem", height:"65px", lineHeight:"1", width:"20%" }}>
-			  <select style={{width:"100%"}} required name="Building Type">
+			  <select required name="Building Type" className='bldgType'>
 				<option>Apartment</option>
 				<option>Condo</option>
 				<option>Single Family Home</option>
@@ -43,13 +42,13 @@ export default function AddUnit(props) {
 				<option>Mobile Home</option>
 				<option>Parking Space</option>
 			  </select>
-		  </div>
 		  <label>Fees</label>
           <input type="number" style={{marginBottom:"20px"}} step="0.01" min="0" required name="fees" />
 		  <label>Square Footage</label>
           <input type="number" style={{marginBottom:"20px"}} min="0" name="sqft" />
+
           <Button color="success" type="submit" onClick={(e)=>postUnit(e)}>Add Unit</Button>
-		  <Link className="mx-0" style={{width:"20%"}} to="/dashboard"><Button className="m-0 w-100" color="secondary" type="reset">Cancel</Button></Link>
+		  <Link style={{width: '100%'}} to="/dashboard"><Button className="btn" color="secondary" type="reset">Cancel</Button></Link>
       </form>
     </div>
   );
