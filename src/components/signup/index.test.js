@@ -37,6 +37,13 @@ test('renders Label of Dropdown', () => {
   getByText(/Renter or a Manager/i);
 });
 test('renders Renter option of Dropdown', () => {
+  const { getAllByText } = render(<SignUp />);
+  getAllByText(/Renter/i);
+});
+test('renders Manager option of Dropdown', () => {
+  const { getAllByText } = render(<SignUp />);
+  getAllByText(/Manager/i);
+  
   const { getByText } = render(<SignUp />);
   getByText(/^Renter$/i);
 });

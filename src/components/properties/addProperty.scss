@@ -1,26 +1,35 @@
 .addPropForm {
 	display: flex;
 	flex-direction: column;
-	height: 50vh;
+	height: auto;
 	align-items: center;
-	padding-top: 40px;
+	padding: 40px 0;
 	justify-content: flex-start;
 
 	.btn,
-	input {
+	input,
+	button[type='reset'] {
 		margin: 10px;
-		width: 20%;
+		width: 40%;
 		font-size: 2rem;
 	}
 
 	.btn {
 		padding: 18px 32px;
 	}
+
+	.bldgType {
+		padding: 10px 5px;
+		width: 40%;
+		font-size: x-large;
+	}
 }
 
 @media (max-width: 1200px) {
 	.addPropForm {
-		.btn, input {
+		.btn,
+		input,
+		button[type='reset'] {
 			width: 40%;
 		}
 	}
@@ -30,7 +39,9 @@
 	.addPropForm {
 
 		.btn,
-		input {
+		input,
+		.bldgType,
+		button[type='reset'] {
 			width: 55%;
 		}
 	}
@@ -40,7 +51,9 @@
 	.addPropForm {
 
 		.btn,
-		input {
+		input,
+		.bldgType,
+		button[type='reset'] {
 			width: 70%;
 		}
 	}

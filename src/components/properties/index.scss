@@ -2,6 +2,17 @@
   .information p {
     font-size: 2em;
   }
+
+  .info p {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0.5em;
+  }
+
+  .row {
+    margin: 0;
+    justify-content: center;
+  }
 }
 
 .propertyCard {
@@ -24,7 +35,7 @@
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     justify-content: center;
-    
+
     .propertyTitle {
       font-size: 2.5em;
       font-weight: 500;
@@ -63,22 +74,26 @@ p a {
   font-family: "Montserrat", sans-serif;
   display: flex;
   box-sizing: border-box;
-  // height: 70em;
+  min-height: 80%;
+  flex-direction: column;
+  align-items: center;
 
   .propertyInfo {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 30%;
   }
 
   .imgHolder {
     width: 70%;
+
     .propImg {
-     padding: 1em;
-     max-width: 100%;
-     height: auto;
-     max-height: 750px;
+      padding: 1em;
+      height: auto;
+      max-height: 350px;
+      min-height: 350px;
+      min-width: 350px;
+      max-width: 350px;
     }
 
   }

@@ -28,7 +28,7 @@ export default function Properties() {
           <div key={property.id} className="col-lg-5 PropertyCard">
             <PropertyCard property={property} />
             <Link to={`/Properties/${property.id}`}>
-              <Button color="success" className='viewProp' style={{fontSize:"16px", marginTop:'0.5em', padding:'18px 32px'}} size="lg">
+              <Button color="success" className='viewProp' style={{fontSize:"16px", marginTop:'1em', padding:'18px 32px', marginBottom:'1em'}} size="lg">
                 View Property Details
               </Button>
             </Link>

@@ -65,7 +65,7 @@ export default function EditProperty(props) {
 	}
 	return (
 		<div className="main-content">
-			<h2>Edit Property</h2>
+			<h2 style={{fontSize:'4em'}}>Edit Property</h2>
 			<form className="editPropForm">
 				<input type="text" required onChange={onChange} placeholder="Street Address" value={property.address} name="address" />
 				<input type="text" required onChange={onChange} placeholder="City" name="city" value={property.city} />
@@ -74,7 +74,7 @@ export default function EditProperty(props) {
 				<input type="text" onChange={onChange}placeholder="Image Link" value={property.img} name="img" />
 
 				<Button color="success" type="submit" onClick={(e)=>putProperty(e)}>Save Changes</Button>
-				<Link to="/dashboard"><Button color="secondary" type="reset">Cancel</Button></Link>
+				<Link to="/dashboard"><Button color="secondary" type="reset" id='cancel'>Cancel</Button></Link>
 			<Button outline color="danger"
 				onClick={deleteProperty}> Delete Property</Button>
 			</form>
