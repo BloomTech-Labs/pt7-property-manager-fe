@@ -37,7 +37,7 @@ export default function ApplicationForm(props) {
       .catch((err) => {
         console.error(err);
       });
-  }, [props.match.params.unit_id, props.match.params.property_id]);
+  }, []);
 
   //*********************FORM***********************/
   const [apply, setApply] = useState({
@@ -60,7 +60,8 @@ export default function ApplicationForm(props) {
     unit_id: `${props.match.params.property_id}`,
   });
   console.log("apply", apply); //delete
-
+  
+  
   const initialValues = {
     first_name: "",
     last_name: "",
@@ -104,6 +105,7 @@ export default function ApplicationForm(props) {
       .then((res) => {
         console.log(res);
         console.log("status", res.status);
+        confirmate()
         if (res.status === 200) {
           setConfirm({ confirmed: true });
         }
@@ -113,6 +115,11 @@ export default function ApplicationForm(props) {
       });
  
   };
+  const confirmate = ()=>{
+    return(
+    <ConfirmationModal/>
+    )
+  }
 
   const dateUnits = Date(unit.date_available);
   return (
@@ -309,8 +316,8 @@ export default function ApplicationForm(props) {
         <div style={{ marginBottom: "20px" }}>
           <DropUp />
         </div>
-
-        <Button color="success" type="submit" onClick={handleSubmit}>
+       
+        <Button color="success" type="submit" onClick={handleSubmit} onSubmit={confirmate}>
           Submit
         </Button>
       </form>
