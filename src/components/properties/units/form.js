@@ -37,7 +37,7 @@ export default function ApplicationForm(props) {
       .catch((err) => {
         console.error(err);
       });
-  }, [props.match.params.unit_id, props.match.params.property_id]);
+  }, []);
 
   //*********************FORM***********************/
   const [apply, setApply] = useState({
@@ -60,7 +60,8 @@ export default function ApplicationForm(props) {
     unit_id: `${props.match.params.property_id}`,
   });
   console.log("apply", apply); //delete
-
+  
+  
   const initialValues = {
     first_name: "",
     last_name: "",

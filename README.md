@@ -133,6 +133,13 @@ In order for the app to function correctly, the user must set up their own envir
 
 🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
 
+
+1.  Fork the repository at [https://github.com/Lambda-School-Labs/pt7-property-manager-fe](https://github.com/Lambda-School-Labs/pt7-property-manager-fe)
+2.  CD into the pt7-property-manager-fe directory
+3.  *NPM install* to install dependencies
+4.  *NPM start* to fire up the app on your local server
+
+
 ## Other Scripts
 
 🚫replace these examples with your own
