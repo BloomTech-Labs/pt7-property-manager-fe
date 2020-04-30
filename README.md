@@ -38,11 +38,11 @@ As a property owner can you imagine not being able to organize and manage your r
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-    Login as Renter/Manager
+-    Add and manage properties
+-    Add units to properties
+-    Upload any document type
+-    Guest View of properties
 
 ## Tech Stack
 
@@ -71,31 +71,26 @@ As a property owner can you imagine not being able to organize and manage your r
 
 ## 2️⃣ Authentication API here
 
-🚫Replace text below with a description of the API
 
 Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
 
 ## 2️⃣ Payment API here
 
-🚫Replace text below with a description of the API
 
 This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
 
 ## 3️⃣ Misc API here
 
-🚫Replace text below with a description of the API
 
 You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
 
 ## 3️⃣ Misc API here
 
-🚫Replace text below with a description of the API
 
 When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
 
 ## 3️⃣ Misc API here
 
-🚫Replace text below with a description of the API
 
 Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
 
@@ -103,7 +98,6 @@ Volunteering your time; it pays you and your whole community fantastic dividends
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-🚫These are just examples, replace them with the specifics for your app
 
     *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
     *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
@@ -118,7 +112,6 @@ In order for the app to function correctly, the user must set up their own envir
 
 # 5️⃣ Content Licenses
 
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
 | Image Filename | Source / Creator | License                                                                      |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
@@ -127,11 +120,11 @@ In order for the app to function correctly, the user must set up their own envir
 
 # 4️⃣ Testing
 
-🚫Document what you used for testing and why
+Jest/Gitub Actions/Codeclimate
 
 # 4️⃣ Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+
 
 
 1.  Fork the repository at [https://github.com/Lambda-School-Labs/pt7-property-manager-fe](https://github.com/Lambda-School-Labs/pt7-property-manager-fe)
@@ -142,7 +135,7 @@ In order for the app to function correctly, the user must set up their own envir
 
 ## Other Scripts
 
-🚫replace these examples with your own
+
 
     * typecheck - runs the TypeScript compiler
     * build - creates a build of the application
